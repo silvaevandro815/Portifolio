@@ -123,9 +123,9 @@
     <!-- Header / Nav -->
     <header class="fixed top-0 w-full z-[100] px-6 py-4">
         <nav class="max-w-7xl mx-auto glass rounded-full px-8 py-4 flex justify-between items-center border border-white/5 shadow-2xl">
-            <div class="flex items-center gap-2">
-                <div class="w-8 h-8 bg-cyber-blue rounded-lg flex items-center justify-center font-black text-xs">E</div>
-                <span class="font-black text-xl tracking-tighter uppercase">EVANDRO<span class="text-cyber-blue">SG</span></span>
+            <div class="flex items-center gap-3">
+                <img src="logo.jpg" alt="Logo Evandro SG" class="h-8 w-auto rounded-md shadow-[0_0_10px_rgba(0,123,255,0.3)]">
+                <span class="font-black text-xl tracking-tighter uppercase hidden sm:inline">EVANDRO<span class="text-cyber-blue">SG</span></span>
             </div>
             <div class="hidden md:flex gap-10 text-[11px] font-extrabold uppercase tracking-widest opacity-60">
                 <a href="#hero" class="hover:text-cyber-blue transition">Início</a>
@@ -166,8 +166,8 @@
 
             <div class="relative" id="hero-image">
                 <div class="absolute inset-0 glow-blue opacity-50"></div>
-                <div class="relative z-10 w-full aspect-square max-w-[500px] mx-auto overflow-hidden rounded-[40px] border-4 border-white/5 shadow-2xl">
-                    <img src="profile.png" alt="Evandro Silva Gallina" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
+                <div class="relative z-10 w-full aspect-square max-w-[500px] mx-auto overflow-hidden rounded-[40px] border-4 border-white/5 shadow-2xl bg-cyber-gray">
+                    <img src="perfil_main.jpg" alt="Evandro Silva Gallina" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
                 </div>
                 <div class="absolute -bottom-6 -right-6 glass p-6 rounded-3xl border border-white/10 shadow-2xl">
                     <div class="flex items-center gap-4">
@@ -229,8 +229,9 @@
             </div>
 
             <!-- 360 Vision -->
-            <div class="md:col-span-2 bento-item border border-white/10 bg-linear-to-br from-cyber-blue/10 to-transparent">
-                <div class="flex items-center gap-6">
+            <div class="md:col-span-2 bento-item border border-white/10 relative overflow-hidden group">
+                <img src="ia_concept.jpg" alt="IA Concept" class="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:opacity-40 transition-opacity duration-700">
+                <div class="relative z-10 flex items-center gap-6">
                     <div class="p-6 bg-white/5 rounded-full border border-white/10">
                         <i data-lucide="eye" class="w-12 h-12 text-white"></i>
                     </div>
@@ -281,9 +282,9 @@
                     </div>
                     <div class="glass p-8 rounded-3xl border border-white/5 group hover:border-cyber-blue/30 transition-all duration-500">
                         <span class="text-cyber-blue font-black text-xs uppercase tracking-widest mb-2 block">2025 — ATUAL</span>
-                        <h3 class="text-2xl mb-1">Assessor de Comunicação</h3>
+                        <h3 class="text-2xl mb-1 uppercase tracking-tighter">Assessor de Comunicação</h3>
                         <p class="text-gray-500 font-black text-sm uppercase mb-6 tracking-widest">DEMSUR – Muriaé/MG</p>
-                        <div class="flex gap-4">
+                        <div class="flex flex-col md:flex-row gap-6">
                             <div class="flex-grow space-y-2">
                                 <div class="flex items-center gap-3 text-sm text-gray-400">
                                     <div class="w-1.5 h-1.5 rounded-full bg-cyber-blue"></div>
@@ -303,11 +304,21 @@
                     <div class="absolute -left-[60px] top-0 w-12 h-12 glass rounded-2xl border border-white/10 flex items-center justify-center text-gray-500">
                         <i data-lucide="palette"></i>
                     </div>
-                    <div class="glass p-8 rounded-3xl border border-white/5 group hover:border-white/20 transition-all duration-500">
-                        <span class="text-gray-500 font-black text-xs uppercase tracking-widest mb-2 block">2023 — 2024</span>
-                        <h3 class="text-2xl mb-1">Gestor Público – Cultura e Projetos</h3>
-                        <p class="text-gray-400/50 font-black text-sm uppercase mb-6 tracking-widest">FUNDARTE – Muriaé/MG</p>
-                        <p class="text-sm text-gray-500 leading-relaxed">Planejamento e execução de políticas públicas culturais e gestão de eventos municipais de grande porte.</p>
+                    <div class="glass p-8 rounded-3xl border border-white/5 group hover:border-white/20 transition-all duration-500 overflow-hidden">
+                        <div class="flex flex-col md:flex-row gap-8">
+                            <div class="md:w-1/3">
+                                <img src="dia_muriaeense.jpg" alt="Evento Prefeitura Muriaé" class="w-full h-48 object-cover rounded-2xl border border-white/10 grayscale group-hover:grayscale-0 transition-all duration-700">
+                            </div>
+                            <div class="md:w-2/3">
+                                <span class="text-gray-500 font-black text-xs uppercase tracking-widest mb-2 block">2023 — 2024</span>
+                                <h3 class="text-2xl mb-1 uppercase tracking-tighter">Gestor Público – Cultura e Projetos</h3>
+                                <p class="text-gray-400/50 font-black text-sm uppercase mb-4 tracking-widest">FUNDARTE – Muriaé/MG</p>
+                                <p class="text-sm text-gray-500 leading-relaxed mb-4">Planejamento e execução de políticas públicas culturais e gestão de eventos municipais. Destaque para a atuação no Dia do Muriaeense.</p>
+                                <div class="inline-flex items-center gap-2 text-[10px] font-black uppercase text-cyber-blue/60 tracking-widest">
+                                    <i data-lucide="map-pin" class="w-3 h-3"></i> Muriaé City Hall Event
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -316,11 +327,21 @@
                     <div class="absolute -left-[60px] top-0 w-12 h-12 glass rounded-2xl border border-white/10 flex items-center justify-center text-gray-500">
                         <i data-lucide="users"></i>
                     </div>
-                    <div class="glass p-8 rounded-3xl border border-white/5 group hover:border-white/20 transition-all duration-500">
-                        <span class="text-gray-500 font-black text-xs uppercase tracking-widest mb-2 block">2021 — 2022</span>
-                        <h3 class="text-2xl mb-1">Gestor Público – Pol. Juventude</h3>
-                        <p class="text-gray-400/50 font-black text-sm uppercase mb-6 tracking-widest">FUNDARTE – Muriaé/MG</p>
-                        <p class="text-sm text-gray-500 leading-relaxed">Implementação de projetos de engajamento juvenil e coordenação de programas educacionais inovadores.</p>
+                    <div class="glass p-8 rounded-3xl border border-white/5 group hover:border-white/20 transition-all duration-500 overflow-hidden">
+                        <div class="flex flex-col md:flex-row gap-8">
+                            <div class="md:w-2/3">
+                                <span class="text-gray-500 font-black text-xs uppercase tracking-widest mb-2 block">2021 — 2022</span>
+                                <h3 class="text-2xl mb-1 uppercase tracking-tighter">Gestor Público – Pol. Juventude</h3>
+                                <p class="text-gray-400/50 font-black text-sm uppercase mb-4 tracking-widest">FUNDARTE – Muriaé/MG</p>
+                                <p class="text-sm text-gray-500 leading-relaxed mb-4">Implementação de projetos de engajamento juvenil e coordenação de programas educacionais. Palestrante na V Conferência de Juventude.</p>
+                                <div class="inline-flex items-center gap-2 text-[10px] font-black uppercase text-cyber-neon/60 tracking-widest">
+                                    <i data-lucide="mic" class="w-3 h-3"></i> Faculdade Santa Marcelina
+                                </div>
+                            </div>
+                            <div class="md:w-1/3">
+                                <img src="conferencia_juventude.jpg" alt="V Conferência de Juventude" class="w-full h-48 object-cover rounded-2xl border border-white/10 grayscale group-hover:grayscale-0 transition-all duration-700">
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -380,6 +401,9 @@
     <footer class="py-32 px-6 border-t border-white/5 relative overflow-hidden">
         <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] glow-blue opacity-20 -z-10"></div>
         <div class="max-w-4xl mx-auto text-center space-y-12">
+            <div class="flex justify-center mb-8">
+                <img src="logo.jpg" alt="Logo Evandro SG" class="h-16 w-auto rounded-xl shadow-2xl grayscale hover:grayscale-0 transition-all duration-700">
+            </div>
             <h2 class="text-5xl md:text-7xl tracking-tighter leading-tight">
                 Pronto para <span class="text-cyber-blue">automatizar</span> sua visão? <br>
                 <span class="text-gray-500">Vamos construir algo extraordinário.</span>
