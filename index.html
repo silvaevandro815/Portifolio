@@ -1,36 +1,38 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Evandro Silva Gallina | Especialista em IA & Automação</title>
+    <title>Evandro Silva Gallina | AI & Automation Architect</title>
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Plus+Jakarta+Sans:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
+    <!-- GSAP for Luxury Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
-    
-    <!-- Three.js for Background -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        'cyber-bg': '#0D0D0D',
-                        'cyber-accent': '#00C2E0',
-                        'cyber-text': '#E5E7EB',
+                        'cyber-black': '#0A0A0A',
+                        'cyber-gray': '#171717',
+                        'cyber-blue': '#007BFF',
+                        'cyber-neon': '#00FF99',
                     },
                     fontFamily: {
-                        'orbitron': ['Orbitron', 'sans-serif'],
-                        'inter': ['Inter', 'sans-serif'],
+                        'sans': ['Inter', 'Plus Jakarta Sans', 'sans-serif'],
+                        'mono': ['JetBrains Mono', 'monospace'],
                     }
                 }
             }
@@ -38,348 +40,446 @@
     </script>
 
     <style>
-        body {
-            background-color: #0D0D0D;
-            color: #E5E7EB;
-            font-family: 'Inter', sans-serif;
-            margin: 0;
-            overflow-x: hidden;
-            scroll-behavior: smooth;
-        }
-
-        .orbitron { font-family: 'Orbitron', sans-serif; }
-
-        /* Scanline Effect */
-        .scanline {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(
-                to bottom,
-                rgba(18, 16, 16, 0) 50%,
-                rgba(0, 194, 224, 0.05) 50%
-            );
-            background-size: 100% 4px;
-            z-index: 100;
-            pointer-events: none;
-            opacity: 0.3;
-            animation: scan 10s linear infinite;
-        }
-
-        @keyframes scan {
-            from { background-position: 0 0; }
-            to { background-position: 0 100%; }
+        @layer base {
+            body {
+                @apply bg-cyber-black text-white antialiased selection:bg-cyber-blue selection:text-white;
+                font-family: 'Plus Jakarta Sans', sans-serif;
+            }
+            h1, h2, h3 {
+                font-family: 'Inter', sans-serif;
+                @apply font-black tracking-tight;
+            }
         }
 
         /* Glassmorphism */
         .glass {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(0, 194, 224, 0.1);
-            transition: all 0.3s ease;
+            background: rgba(23, 23, 23, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
-        .glass:hover {
-            border-color: rgba(0, 194, 224, 0.4);
-            background: rgba(255, 255, 255, 0.05);
-            box-shadow: 0 0 20px rgba(0, 194, 224, 0.1);
-        }
-
-        .neon-text {
-            text-shadow: 0 0 10px rgba(0, 194, 224, 0.8), 0 0 20px rgba(0, 194, 224, 0.4);
-        }
-
-        .cyber-border {
-            border: 1px solid rgba(0, 194, 224, 0.3);
+        /* Gradient Border */
+        .gradient-border {
             position: relative;
+            background: #171717;
+            border-radius: 12px;
+            z-index: 1;
         }
 
-        .cyber-border::before {
-            content: '';
+        .gradient-border::before {
+            content: "";
             position: absolute;
-            top: -2px;
-            left: -2px;
-            width: 10px;
-            height: 10px;
-            border-top: 2px solid #00C2E0;
-            border-left: 2px solid #00C2E0;
-        }
-
-        .cyber-border::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            right: -2px;
-            width: 10px;
-            height: 10px;
-            border-bottom: 2px solid #00C2E0;
-            border-right: 2px solid #00C2E0;
-        }
-
-        #bg-canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
+            top: -1px; left: -1px; right: -1px; bottom: -1px;
+            background: linear-gradient(45deg, #007BFF, transparent, #00FF99);
+            border-radius: 12px;
             z-index: -1;
+            opacity: 0.3;
+            transition: opacity 0.3s;
         }
 
-        /* Scrollbar */
-        ::-webkit-scrollbar { width: 6px; }
-        ::-webkit-scrollbar-track { background: #0D0D0D; }
-        ::-webkit-scrollbar-thumb { background: #00C2E0; border-radius: 10px; }
-
-        .section-title {
-            @apply orbitron text-3xl font-black mb-12 flex items-center gap-4;
+        .gradient-border:hover::before {
+            opacity: 1;
         }
 
-        .section-title::after {
-            content: '';
-            height: 2px;
-            @apply bg-cyber-accent flex-grow opacity-30;
+        /* Hero Glow */
+        .glow-blue {
+            filter: blur(120px);
+            background: radial-gradient(circle, rgba(0, 123, 255, 0.2) 0%, transparent 70%);
+        }
+
+        /* Bento Grid Item */
+        .bento-item {
+            @apply glass rounded-3xl p-8 flex flex-col justify-between overflow-hidden relative transition-all duration-500 hover:scale-[1.02];
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0A0A0A; }
+        ::-webkit-scrollbar-thumb { background: #262626; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #007BFF; }
+
+        /* Floating Button Animation */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .float-ia {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        /* Scanline Overlay (Refined) */
+        .scanline {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: linear-gradient(to bottom, transparent 50%, rgba(0, 123, 255, 0.02) 50%);
+            background-size: 100% 4px;
+            z-index: 50; pointer-events: none;
         }
     </style>
 </head>
-<body>
+<body class="overflow-x-hidden">
     <div class="scanline"></div>
-    <canvas id="bg-canvas"></canvas>
 
-    <!-- Navbar -->
-    <nav class="fixed top-0 w-full z-[1000] glass px-6 py-4 flex justify-between items-center border-b border-cyber-accent/10">
-        <div class="orbitron font-black text-cyber-accent text-2xl tracking-tighter uppercase">
-            EVANDRO <span class="text-white">SG</span>
-        </div>
-        <div class="hidden md:flex gap-8 text-[10px] orbitron font-bold tracking-widest uppercase opacity-70">
-            <a href="#home" class="hover:text-cyber-accent transition">Início</a>
-            <a href="#projects" class="hover:text-cyber-accent transition">Projetos</a>
-            <a href="#experience" class="hover:text-cyber-accent transition">Trajetória</a>
-            <a href="#skills" class="hover:text-cyber-accent transition">Habilidades</a>
-        </div>
-        <a href="https://wa.me/5532984587255" target="_blank" class="cyber-border px-4 py-2 text-[10px] orbitron font-bold hover:bg-cyber-accent hover:text-black transition uppercase">
-            Contato
-        </a>
-    </nav>
-
-    <!-- Hero -->
-    <section id="home" class="min-h-screen flex flex-col justify-center items-center px-6 pt-20 text-center relative">
-        <div class="max-w-5xl">
-            <h2 class="orbitron text-cyber-accent text-sm md:text-base font-bold tracking-[0.5em] mb-4 animate-pulse uppercase">
-                Systems IA Architect & Automation Specialist
-            </h2>
-            <h1 class="orbitron text-5xl md:text-8xl font-black mb-6 neon-text tracking-tighter leading-tight">
-                EVANDRO SILVA GALLINA
-            </h1>
-            <p class="text-xl md:text-2xl font-light text-gray-400 mb-10 max-w-3xl mx-auto leading-relaxed">
-                Transformando processos analógicos em <span class="text-cyber-accent font-semibold">ecossistemas autônomos</span> de alta performance com IA de ponta.
-            </p>
-            <div class="flex flex-col md:flex-row gap-6 justify-center">
-                <a href="#projects" class="bg-cyber-accent text-black orbitron font-black px-10 py-4 rounded-sm hover:scale-105 transition shadow-[0_0_20px_rgba(0,194,224,0.3)]">
-                    EXPLORAR LABS
-                </a>
-                <a href="https://wa.me/5532984587255" target="_blank" class="border border-cyber-accent text-cyber-accent orbitron font-black px-10 py-4 rounded-sm hover:bg-cyber-accent/10 transition">
-                    DISCUTIR PROJETO
-                </a>
+    <!-- Header / Nav -->
+    <header class="fixed top-0 w-full z-[100] px-6 py-4">
+        <nav class="max-w-7xl mx-auto glass rounded-full px-8 py-4 flex justify-between items-center border border-white/5 shadow-2xl">
+            <div class="flex items-center gap-2">
+                <div class="w-8 h-8 bg-cyber-blue rounded-lg flex items-center justify-center font-black text-xs">E</div>
+                <span class="font-black text-xl tracking-tighter uppercase">EVANDRO<span class="text-cyber-blue">SG</span></span>
             </div>
-        </div>
-        
-        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-30">
-            <span class="text-[8px] orbitron tracking-[0.3em]">SCROLL</span>
-            <div class="w-[1px] h-12 bg-cyber-accent"></div>
-        </div>
-    </section>
+            <div class="hidden md:flex gap-10 text-[11px] font-extrabold uppercase tracking-widest opacity-60">
+                <a href="#hero" class="hover:text-cyber-blue transition">Início</a>
+                <a href="#stack" class="hover:text-cyber-blue transition">Stack</a>
+                <a href="#projects" class="hover:text-cyber-blue transition">Projetos</a>
+                <a href="#experience" class="hover:text-cyber-blue transition">Trajetória</a>
+            </div>
+            <a href="https://wa.me/5532984587255" target="_blank" class="bg-white text-black text-[11px] font-black uppercase px-6 py-2 rounded-full hover:bg-cyber-blue hover:text-white transition-all shadow-lg shadow-white/5">
+                Consultoria
+            </a>
+        </nav>
+    </header>
 
-    <!-- Projects -->
-    <section id="projects" class="py-32 px-6 container mx-auto">
-        <h2 class="section-title">ECOSSISTEMA ATIVO</h2>
-        <div class="grid md:grid-cols-2 gap-10">
-            <!-- Project 1 -->
-            <div class="glass p-10 rounded-lg group relative overflow-hidden">
-                <div class="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-20 transition">
-                    <i data-lucide="terminal" class="w-32 h-32 text-cyber-accent"></i>
+    <!-- Hero Section -->
+    <section id="hero" class="relative min-h-screen flex items-center px-6 pt-32 overflow-hidden">
+        <div class="absolute top-1/4 right-0 w-[600px] h-[600px] glow-blue -z-10"></div>
+        <div class="max-w-7xl mx-auto w-full grid md:grid-cols-2 gap-16 items-center">
+            <div class="space-y-8" id="hero-text">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyber-blue/10 border border-cyber-blue/20">
+                    <span class="w-2 h-2 rounded-full bg-cyber-blue animate-ping"></span>
+                    <span class="text-xs font-black text-cyber-blue uppercase tracking-widest">Disponível para Projetos</span>
                 </div>
-                <span class="text-[10px] orbitron text-cyber-accent border border-cyber-accent/30 px-2 py-1 rounded mb-4 inline-block">AI AGENTS & AUTOMATION</span>
-                <h3 class="orbitron text-3xl font-black mb-4 group-hover:text-cyber-accent transition">PROJETO IRIS</h3>
-                <p class="text-gray-400 mb-8 leading-relaxed">
-                    Infraestrutura avançada de agentes inteligentes integrada a fluxos empresariais, reduzindo custos operacionais em até 70%.
+                <h1 class="text-6xl md:text-8xl leading-[0.9] text-white">
+                    Arquitetando o <span class="text-transparent bg-clip-text bg-linear-to-r from-cyber-blue to-cyber-neon">Futuro</span> com IA e Automação
+                </h1>
+                <p class="text-lg md:text-xl text-gray-400 max-w-xl leading-relaxed font-light">
+                    Transformando processos analógicos em <span class="text-white font-semibold">ecossistemas autônomos</span> de alta performance. Especialista em n8n, Agentes IA e Gestão Pública.
                 </p>
-                <a href="https://agencia.evandrosilvagallina.cloud/" target="_blank" class="flex items-center gap-2 text-cyber-accent orbitron font-bold text-sm tracking-tighter hover:gap-4 transition-all">
-                    ACESSAR AGÊNCIA <i data-lucide="external-link" class="w-4 h-4"></i>
-                </a>
-            </div>
-            <!-- Project 2 -->
-            <div class="glass p-10 rounded-lg group relative overflow-hidden">
-                <div class="absolute top-0 right-0 p-6 opacity-5 group-hover:opacity-20 transition">
-                    <i data-lucide="activity" class="w-32 h-32 text-cyber-accent"></i>
+                <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                    <a href="https://wa.me/5532984587255" target="_blank" class="flex items-center justify-center gap-3 bg-cyber-blue text-white px-10 py-5 rounded-2xl font-black transition-transform hover:scale-105 active:scale-95 shadow-2xl shadow-cyber-blue/20">
+                        <i data-lucide="message-square"></i> Falar no WhatsApp
+                    </a>
+                    <a href="#projects" class="flex items-center justify-center gap-3 glass text-white px-10 py-5 rounded-2xl font-black border border-white/10 hover:border-white/20 transition-all">
+                        Ver Projetos <i data-lucide="arrow-right"></i>
+                    </a>
                 </div>
-                <span class="text-[10px] orbitron text-cyber-accent border border-cyber-accent/30 px-2 py-1 rounded mb-4 inline-block">SAAS & OPENAI</span>
-                <h3 class="orbitron text-3xl font-black mb-4 group-hover:text-cyber-accent transition">MARCÃO PERSONAL IA</h3>
-                <p class="text-gray-400 mb-8 leading-relaxed">
-                    SaaS Fitness que utiliza GPT-4 para criar treinos e dietas hiper-personalizadas via WhatsApp em tempo real.
-                </p>
-                <a href="https://marcaopersonal.com/" target="_blank" class="flex items-center gap-2 text-cyber-accent orbitron font-bold text-sm tracking-tighter hover:gap-4 transition-all">
-                    VISITAR SITE <i data-lucide="external-link" class="w-4 h-4"></i>
-                </a>
             </div>
-        </div>
-    </section>
 
-    <!-- Trajetória -->
-    <section id="experience" class="py-32 px-6 bg-white/[0.02]">
-        <div class="container mx-auto max-w-5xl">
-            <h2 class="section-title">TRAJETÓRIA</h2>
-            <div class="space-y-12">
-                <div class="relative pl-10 border-l border-cyber-accent/20">
-                    <div class="absolute w-4 h-4 bg-cyber-accent rounded-full -left-[9px] top-1 shadow-[0_0_10px_#00C2E0]"></div>
-                    <span class="orbitron text-cyber-accent text-xs font-bold tracking-widest block mb-2">2025 – ATUAL</span>
-                    <h3 class="orbitron text-2xl font-black mb-1">Assessor de Comunicação</h3>
-                    <p class="text-gray-500 mb-4 font-semibold uppercase text-sm">DEMSUR – Muriaé/MG</p>
-                    <p class="text-gray-400 leading-relaxed max-w-3xl">Liderança em estratégias de comunicação institucional e digital, aplicando automações para otimização de fluxos de informação pública.</p>
+            <div class="relative" id="hero-image">
+                <div class="absolute inset-0 glow-blue opacity-50"></div>
+                <div class="relative z-10 w-full aspect-square max-w-[500px] mx-auto overflow-hidden rounded-[40px] border-4 border-white/5 shadow-2xl">
+                    <img src="profile.png" alt="Evandro Silva Gallina" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700">
                 </div>
-                <div class="relative pl-10 border-l border-cyber-accent/20">
-                    <div class="absolute w-4 h-4 bg-cyber-accent/40 rounded-full -left-[9px] top-1"></div>
-                    <span class="orbitron text-cyber-accent text-xs font-bold tracking-widest block mb-2">2023 – 2024</span>
-                    <h3 class="orbitron text-2xl font-black mb-1">Gestor Público – Cultura e Projetos</h3>
-                    <p class="text-gray-500 mb-4 font-semibold uppercase text-sm">FUNDARTE – Muriaé/MG</p>
-                    <p class="text-gray-400 leading-relaxed max-w-3xl">Planejamento estratégico e execução de políticas públicas culturais, com foco em eficiência administrativa e captação de recursos.</p>
-                </div>
-                <div class="relative pl-10 border-l border-cyber-accent/20">
-                    <div class="absolute w-4 h-4 bg-cyber-accent/40 rounded-full -left-[9px] top-1"></div>
-                    <span class="orbitron text-cyber-accent text-xs font-bold tracking-widest block mb-2">2021 – 2022</span>
-                    <h3 class="orbitron text-2xl font-black mb-1">Gestor Público – Políticas para Juventude</h3>
-                    <p class="text-gray-500 mb-4 font-semibold uppercase text-sm">FUNDARTE – Muriaé/MG</p>
-                    <p class="text-gray-400 leading-relaxed max-w-3xl">Desenvolvimento de programas educacionais e engajamento juvenil através de iniciativas tecnológicas e culturais.</p>
+                <div class="absolute -bottom-6 -right-6 glass p-6 rounded-3xl border border-white/10 shadow-2xl">
+                    <div class="flex items-center gap-4">
+                        <div class="p-3 bg-cyber-neon/10 rounded-2xl text-cyber-neon">
+                            <i data-lucide="zap"></i>
+                        </div>
+                        <div>
+                            <p class="text-[10px] uppercase font-black opacity-40">Experiência</p>
+                            <p class="text-xl font-black">10+ Anos</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Skills -->
-    <section id="skills" class="py-32 px-6 container mx-auto">
-        <h2 class="section-title">STACK TECNOLÓGICA</h2>
-        <div class="grid md:grid-cols-3 gap-8">
-            <div class="glass p-8 rounded-lg border-t-2 border-cyber-accent">
-                <div class="flex items-center gap-3 mb-6 text-cyber-accent">
-                    <i data-lucide="cpu" class="w-6 h-6"></i>
-                    <h3 class="orbitron font-bold text-lg uppercase tracking-wider">IA & Automação</h3>
+    <!-- Bento Grid Stack -->
+    <section id="stack" class="py-32 px-6 max-w-7xl mx-auto">
+        <div class="mb-20 space-y-4">
+            <p class="text-cyber-blue text-sm font-black uppercase tracking-[0.3em]">Core Tecnológico</p>
+            <h2 class="text-5xl md:text-6xl">Ferramentas de <span class="text-gray-500">Próxima Geração</span></h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-6 h-full md:h-[600px]">
+            <!-- n8n -->
+            <div class="md:col-span-2 bento-item bg-linear-to-br from-cyber-gray to-[#262626]">
+                <div class="flex justify-between items-start mb-8">
+                    <div class="p-4 bg-orange-500/10 rounded-2xl text-orange-500">
+                        <i data-lucide="shuffle" class="w-8 h-8"></i>
+                    </div>
+                    <span class="text-[10px] font-black uppercase tracking-widest text-orange-500 bg-orange-500/5 px-3 py-1 rounded-full border border-orange-500/20">Mastery</span>
                 </div>
-                <div class="flex flex-wrap gap-2">
-                    <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-sm text-xs font-medium tracking-wide">n8n Workflow</span>
-                    <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-sm text-xs font-medium tracking-wide">AI Agents (RAG)</span>
-                    <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-sm text-xs font-medium tracking-wide">Prompt Engineering</span>
-                    <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-sm text-xs font-medium tracking-wide">OpenAI API</span>
-                    <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-sm text-xs font-medium tracking-wide">Python</span>
-                    <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-sm text-xs font-medium tracking-wide">NoCode/LowCode</span>
+                <div>
+                    <h3 class="text-3xl mb-2 uppercase">n8n Automation</h3>
+                    <p class="text-sm text-gray-500 leading-relaxed">Criação de workflows complexos conectando centenas de ferramentas para automação empresarial absoluta.</p>
                 </div>
             </div>
-            <div class="glass p-8 rounded-lg border-t-2 border-cyber-accent">
-                <div class="flex items-center gap-3 mb-6 text-cyber-accent">
+
+            <!-- AI Agents -->
+            <div class="bento-item border-t-2 border-t-cyber-blue">
+                <div class="p-4 bg-cyber-blue/10 rounded-2xl text-cyber-blue mb-8 w-fit">
+                    <i data-lucide="bot" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <h3 class="text-xl mb-2 uppercase">Agentes IA (RAG)</h3>
+                    <p class="text-xs text-gray-500">Implementação de arquiteturas de busca com recuperação aumentada (RAG).</p>
+                </div>
+            </div>
+
+            <!-- Prompt Eng -->
+            <div class="bento-item border-t-2 border-t-cyber-neon">
+                <div class="p-4 bg-cyber-neon/10 rounded-2xl text-cyber-neon mb-8 w-fit">
+                    <i data-lucide="terminal" class="w-6 h-6"></i>
+                </div>
+                <div>
+                    <h3 class="text-xl mb-2 uppercase">Prompt Eng.</h3>
+                    <p class="text-xs text-gray-500">Otimização de instruções para LLMs (GPT-4, Claude 3) para máxima precisão.</p>
+                </div>
+            </div>
+
+            <!-- 360 Vision -->
+            <div class="md:col-span-2 bento-item border border-white/10 bg-linear-to-br from-cyber-blue/10 to-transparent">
+                <div class="flex items-center gap-6">
+                    <div class="p-6 bg-white/5 rounded-full border border-white/10">
+                        <i data-lucide="eye" class="w-12 h-12 text-white"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-4xl font-black uppercase tracking-tighter">Visão 360°</h3>
+                        <p class="text-gray-400 font-semibold italic text-lg uppercase tracking-widest">Gestão Pública + Tecnologia</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SQL -->
+            <div class="bento-item bg-[#111]">
+                <div class="p-4 bg-gray-500/10 rounded-2xl text-gray-400 mb-8 w-fit">
                     <i data-lucide="database" class="w-6 h-6"></i>
-                    <h3 class="orbitron font-bold text-lg uppercase tracking-wider">Infra & Dados</h3>
                 </div>
-                <div class="flex flex-wrap gap-2">
-                    <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-sm text-xs font-medium tracking-wide">Supabase SQL</span>
-                    <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-sm text-xs font-medium tracking-wide">Serverless</span>
-                    <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-sm text-xs font-medium tracking-wide">VPS Management</span>
-                    <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-sm text-xs font-medium tracking-wide">Coolify Deploy</span>
-                    <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-sm text-xs font-medium tracking-wide">API Integration</span>
+                <div>
+                    <h3 class="text-xl mb-2 uppercase tracking-tighter">Supabase / SQL</h3>
+                    <p class="text-xs text-gray-500">Gerenciamento de bancos de dados robustos para sistemas SaaS.</p>
                 </div>
             </div>
-            <div class="glass p-8 rounded-lg border-t-2 border-cyber-accent">
-                <div class="flex items-center gap-3 mb-6 text-cyber-accent">
-                    <i data-lucide="message-square" class="w-6 h-6"></i>
-                    <h3 class="orbitron font-bold text-lg uppercase tracking-wider">Comunicação</h3>
+
+            <!-- NoCode -->
+            <div class="bento-item bg-cyber-gray">
+                <div class="p-4 bg-purple-500/10 rounded-2xl text-purple-500 mb-8 w-fit">
+                    <i data-lucide="layers" class="w-6 h-6"></i>
                 </div>
-                <div class="flex flex-wrap gap-2">
-                    <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-sm text-xs font-medium tracking-wide">Gestão Pública</span>
-                    <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-sm text-xs font-medium tracking-wide">Design Gráfico</span>
-                    <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-sm text-xs font-medium tracking-wide">Audiovisual</span>
-                    <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-sm text-xs font-medium tracking-wide">Social Media</span>
-                    <span class="px-3 py-1 bg-white/5 border border-white/10 rounded-sm text-xs font-medium tracking-wide">Copywriting</span>
+                <div>
+                    <h3 class="text-xl mb-2 uppercase tracking-tighter">NoCode / LowCode</h3>
+                    <p class="text-xs text-gray-500">Desenvolvimento ágil de aplicações e MVPs tecnológicos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Timeline -->
+    <section id="experience" class="py-32 px-6 bg-white/[0.01]">
+        <div class="max-w-4xl mx-auto">
+            <div class="mb-20 text-center space-y-4">
+                <p class="text-cyber-neon text-sm font-black uppercase tracking-[0.3em]">Minha Trajetória</p>
+                <h2 class="text-5xl md:text-6xl">Experiência <span class="text-gray-500">Interativa</span></h2>
+            </div>
+
+            <div class="relative border-l border-white/5 space-y-16 pl-12">
+                <!-- Exp 1 -->
+                <div class="relative exp-card">
+                    <div class="absolute -left-[60px] top-0 w-12 h-12 glass rounded-2xl border border-cyber-blue flex items-center justify-center text-cyber-blue">
+                        <i data-lucide="building-2"></i>
+                    </div>
+                    <div class="glass p-8 rounded-3xl border border-white/5 group hover:border-cyber-blue/30 transition-all duration-500">
+                        <span class="text-cyber-blue font-black text-xs uppercase tracking-widest mb-2 block">2025 — ATUAL</span>
+                        <h3 class="text-2xl mb-1">Assessor de Comunicação</h3>
+                        <p class="text-gray-500 font-black text-sm uppercase mb-6 tracking-widest">DEMSUR – Muriaé/MG</p>
+                        <div class="flex gap-4">
+                            <div class="flex-grow space-y-2">
+                                <div class="flex items-center gap-3 text-sm text-gray-400">
+                                    <div class="w-1.5 h-1.5 rounded-full bg-cyber-blue"></div>
+                                    Otimização de fluxos de informação pública via automação.
+                                </div>
+                                <div class="flex items-center gap-3 text-sm text-gray-400">
+                                    <div class="w-1.5 h-1.5 rounded-full bg-cyber-blue"></div>
+                                    Liderança em estratégias digitais institucionais.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Exp 2 -->
+                <div class="relative exp-card">
+                    <div class="absolute -left-[60px] top-0 w-12 h-12 glass rounded-2xl border border-white/10 flex items-center justify-center text-gray-500">
+                        <i data-lucide="palette"></i>
+                    </div>
+                    <div class="glass p-8 rounded-3xl border border-white/5 group hover:border-white/20 transition-all duration-500">
+                        <span class="text-gray-500 font-black text-xs uppercase tracking-widest mb-2 block">2023 — 2024</span>
+                        <h3 class="text-2xl mb-1">Gestor Público – Cultura e Projetos</h3>
+                        <p class="text-gray-400/50 font-black text-sm uppercase mb-6 tracking-widest">FUNDARTE – Muriaé/MG</p>
+                        <p class="text-sm text-gray-500 leading-relaxed">Planejamento e execução de políticas públicas culturais e gestão de eventos municipais de grande porte.</p>
+                    </div>
+                </div>
+
+                <!-- Exp 3 -->
+                <div class="relative exp-card">
+                    <div class="absolute -left-[60px] top-0 w-12 h-12 glass rounded-2xl border border-white/10 flex items-center justify-center text-gray-500">
+                        <i data-lucide="users"></i>
+                    </div>
+                    <div class="glass p-8 rounded-3xl border border-white/5 group hover:border-white/20 transition-all duration-500">
+                        <span class="text-gray-500 font-black text-xs uppercase tracking-widest mb-2 block">2021 — 2022</span>
+                        <h3 class="text-2xl mb-1">Gestor Público – Pol. Juventude</h3>
+                        <p class="text-gray-400/50 font-black text-sm uppercase mb-6 tracking-widest">FUNDARTE – Muriaé/MG</p>
+                        <p class="text-sm text-gray-500 leading-relaxed">Implementação de projetos de engajamento juvenil e coordenação de programas educacionais inovadores.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Gallery -->
+    <section id="projects" class="py-32 px-6 max-w-7xl mx-auto">
+        <div class="mb-20 text-center space-y-4">
+            <p class="text-cyber-blue text-sm font-black uppercase tracking-[0.3em]">Portfólio de Soluções</p>
+            <h2 class="text-5xl md:text-6xl">Impacto <span class="text-gray-500">Real</span></h2>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12">
+            <!-- Project 1 -->
+            <div class="group project-card">
+                <div class="relative overflow-hidden rounded-[40px] border border-white/5 bg-cyber-gray mb-8 aspect-video">
+                    <img src="workflow.png" alt="Automação com IA" class="w-full h-full object-cover scale-110 group-hover:scale-100 transition-all duration-700 opacity-60 group-hover:opacity-100">
+                    <div class="absolute inset-0 bg-linear-to-t from-cyber-black via-transparent to-transparent opacity-60"></div>
+                </div>
+                <div class="px-4 space-y-4">
+                    <div class="flex gap-2">
+                        <span class="text-[10px] font-black uppercase tracking-widest px-3 py-1 bg-white/5 rounded-full text-cyber-blue border border-cyber-blue/20">n8n</span>
+                        <span class="text-[10px] font-black uppercase tracking-widest px-3 py-1 bg-white/5 rounded-full text-cyber-neon border border-cyber-neon/20">OpenAI</span>
+                    </div>
+                    <h3 class="text-3xl uppercase tracking-tighter">Projeto IRIS: Agentes Empresariais</h3>
+                    <p class="text-gray-400 font-light leading-relaxed">Infraestrutura avançada de agentes inteligentes e automação empresarial integrada para redução drástica de esforço manual.</p>
+                    <a href="https://agencia.evandrosilvagallina.cloud/" target="_blank" class="inline-flex items-center gap-2 text-cyber-blue font-black uppercase text-sm tracking-widest border-b-2 border-cyber-blue/30 hover:border-cyber-blue transition-all pb-1">
+                        Explorar Labs <i data-lucide="external-link" class="w-4 h-4"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="group project-card">
+                <div class="relative overflow-hidden rounded-[40px] border border-white/5 bg-cyber-gray mb-8 aspect-video">
+                    <div class="w-full h-full flex items-center justify-center p-12 bg-linear-to-br from-cyber-blue/20 to-cyber-neon/20">
+                        <i data-lucide="smartphone" class="w-32 h-32 text-white/10 group-hover:text-cyber-blue transition-colors duration-500"></i>
+                    </div>
+                </div>
+                <div class="px-4 space-y-4">
+                    <div class="flex gap-2">
+                        <span class="text-[10px] font-black uppercase tracking-widest px-3 py-1 bg-white/5 rounded-full text-purple-500 border border-purple-500/20">SaaS</span>
+                        <span class="text-[10px] font-black uppercase tracking-widest px-3 py-1 bg-white/5 rounded-full text-cyber-neon border border-cyber-neon/20">Fitness IA</span>
+                    </div>
+                    <h3 class="text-3xl uppercase tracking-tighter">Marcão Personal: Personal Trainer IA</h3>
+                    <p class="text-gray-400 font-light leading-relaxed">SaaS Fitness com inteligência artificial integrada via WhatsApp para acompanhamento 24/7 de treinos e dieta.</p>
+                    <a href="https://marcaopersonal.com/" target="_blank" class="inline-flex items-center gap-2 text-cyber-blue font-black uppercase text-sm tracking-widest border-b-2 border-cyber-blue/30 hover:border-cyber-blue transition-all pb-1">
+                        Ver Site <i data-lucide="external-link" class="w-4 h-4"></i>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="py-20 border-t border-white/10 px-6">
-        <div class="container mx-auto flex flex-col md:flex-row justify-between items-center gap-10">
-            <div class="orbitron font-black text-2xl tracking-tighter">
-                EVANDRO <span class="text-cyber-accent">SG</span>
+    <footer class="py-32 px-6 border-t border-white/5 relative overflow-hidden">
+        <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] glow-blue opacity-20 -z-10"></div>
+        <div class="max-w-4xl mx-auto text-center space-y-12">
+            <h2 class="text-5xl md:text-7xl tracking-tighter leading-tight">
+                Pronto para <span class="text-cyber-blue">automatizar</span> sua visão? <br>
+                <span class="text-gray-500">Vamos construir algo extraordinário.</span>
+            </h2>
+            <div class="flex justify-center gap-8 pt-8">
+                <a href="https://www.linkedin.com/in/evandro-sillva-gallina-83097b1aa" target="_blank" class="glass p-5 rounded-3xl hover:text-cyber-blue transition border border-white/5">
+                    <i data-lucide="linkedin" class="w-8 h-8"></i>
+                </a>
+                <a href="https://www.instagram.com/evandrosilvagallina" target="_blank" class="glass p-5 rounded-3xl hover:text-cyber-blue transition border border-white/5">
+                    <i data-lucide="instagram" class="w-8 h-8"></i>
+                </a>
+                <a href="https://evandrosilvagallina.cloud" target="_blank" class="glass p-5 rounded-3xl hover:text-cyber-blue transition border border-white/5">
+                    <i data-lucide="globe" class="w-8 h-8"></i>
+                </a>
             </div>
-            <div class="flex gap-8">
-                <a href="https://www.linkedin.com/in/evandro-sillva-gallina-83097b1aa" target="_blank" class="text-gray-500 hover:text-cyber-accent transition">
-                    <i data-lucide="linkedin"></i>
-                </a>
-                <a href="https://www.instagram.com/evandrosilvagallina" target="_blank" class="text-gray-500 hover:text-cyber-accent transition">
-                    <i data-lucide="instagram"></i>
-                </a>
-                <a href="https://evandrosilvagallina.cloud" target="_blank" class="text-gray-500 hover:text-cyber-accent transition">
-                    <i data-lucide="globe"></i>
-                </a>
-            </div>
-            <p class="orbitron text-[8px] tracking-[0.4em] text-gray-600 uppercase">
-                © 2026 EVANDRO SILVA GALLINA - PORTIFOLIO v2.0
+            <p class="text-[10px] font-black uppercase tracking-[0.5em] opacity-30 pt-20">
+                © 2026 EVANDRO SILVA GALLINA • HOSPEDADO VIA COOLIFY
             </p>
         </div>
     </footer>
+
+    <!-- Floating IA Button -->
+    <div class="fixed bottom-10 right-10 z-[1000] flex flex-col items-end gap-4">
+        <div id="ia-modal" class="hidden glass p-6 rounded-[32px] border border-cyber-blue/30 shadow-2xl mb-4 w-72 origin-bottom-right">
+            <p class="text-[10px] font-black uppercase text-cyber-blue mb-4 tracking-widest">Canais de Contato</p>
+            <div class="space-y-3">
+                <a href="https://wa.me/5532984587255" target="_blank" class="flex items-center gap-4 p-4 rounded-2xl bg-white/5 hover:bg-cyber-blue/10 transition group">
+                    <div class="p-2 rounded-xl bg-cyber-blue/20 text-cyber-blue"><i data-lucide="message-square" class="w-4 h-4"></i></div>
+                    <span class="text-sm font-bold group-hover:text-cyber-blue transition">WhatsApp</span>
+                </a>
+                <a href="https://www.linkedin.com/in/evandro-sillva-gallina-83097b1aa" target="_blank" class="flex items-center gap-4 p-4 rounded-2xl bg-white/5 hover:bg-cyber-blue/10 transition group">
+                    <div class="p-2 rounded-xl bg-cyber-blue/20 text-cyber-blue"><i data-lucide="linkedin" class="w-4 h-4"></i></div>
+                    <span class="text-sm font-bold group-hover:text-cyber-blue transition">LinkedIn</span>
+                </a>
+                <a href="https://www.instagram.com/evandrosilvagallina" target="_blank" class="flex items-center gap-4 p-4 rounded-2xl bg-white/5 hover:bg-cyber-blue/10 transition group">
+                    <div class="p-2 rounded-xl bg-cyber-blue/20 text-cyber-blue"><i data-lucide="instagram" class="w-4 h-4"></i></div>
+                    <span class="text-sm font-bold group-hover:text-cyber-blue transition">Instagram</span>
+                </a>
+            </div>
+        </div>
+        <button id="ia-toggle" class="w-20 h-20 bg-cyber-blue rounded-full shadow-2xl shadow-cyber-blue/40 flex items-center justify-center text-white float-ia border-4 border-white/10 hover:scale-110 transition active:scale-95">
+            <i data-lucide="sparkles" class="w-8 h-8"></i>
+        </button>
+    </div>
 
     <script>
         // Initialize Lucide Icons
         lucide.createIcons();
 
-        // Three.js Background Particle System
-        const scene = new THREE.Scene();
-        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-        const renderer = new THREE.WebGLRenderer({
-            canvas: document.querySelector('#bg-canvas'),
-            alpha: true
+        // GSAP Animations
+        gsap.registerPlugin(ScrollTrigger);
+
+        // Hero Animation
+        gsap.from("#hero-text", {
+            opacity: 0, x: -50, duration: 1.2, ease: "power4.out"
+        });
+        gsap.from("#hero-image", {
+            opacity: 0, scale: 0.8, duration: 1.5, ease: "expo.out", delay: 0.3
         });
 
-        renderer.setPixelRatio(window.devicePixelRatio);
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        camera.position.setZ(30);
-
-        const particlesGeometry = new THREE.BufferGeometry();
-        const particlesCount = 5000;
-        const posArray = new Float32Array(particlesCount * 3);
-
-        for(let i = 0; i < particlesCount * 3; i++) {
-            posArray[i] = (Math.random() - 0.5) * 100;
-        }
-
-        particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
-
-        const material = new THREE.PointsMaterial({
-            size: 0.05,
-            color: '#00C2E0',
-            transparent: true,
-            opacity: 0.5
+        // Bento Grid Animation
+        gsap.from(".bento-item", {
+            scrollTrigger: {
+                trigger: "#stack",
+                start: "top 80%",
+            },
+            opacity: 0, y: 30, stagger: 0.1, duration: 0.8, ease: "power2.out"
         });
 
-        const particlesMesh = new THREE.Points(particlesGeometry, material);
-        scene.add(particlesMesh);
-
-        function animate() {
-            requestAnimationFrame(animate);
-            particlesMesh.rotation.y += 0.001;
-            renderer.render(scene, camera);
-        }
-
-        window.addEventListener('resize', () => {
-            camera.aspect = window.innerWidth / window.innerHeight;
-            camera.updateProjectionMatrix();
-            renderer.setSize(window.innerWidth, window.innerHeight);
+        // Experience Timeline Animation
+        gsap.from(".exp-card", {
+            scrollTrigger: {
+                trigger: "#experience",
+                start: "top 70%",
+            },
+            opacity: 0, x: 50, stagger: 0.2, duration: 1, ease: "power4.out"
         });
 
-        animate();
+        // Project Cards Animation
+        gsap.from(".project-card", {
+            scrollTrigger: {
+                trigger: "#projects",
+                start: "top 70%",
+            },
+            opacity: 0, y: 50, stagger: 0.3, duration: 1.2, ease: "power3.out"
+        });
 
-        // Mouse Move Interaction
-        document.addEventListener('mousemove', (event) => {
-            const mouseX = event.clientX;
-            const mouseY = event.clientY;
-            particlesMesh.rotation.x = mouseY * 0.0001;
-            particlesMesh.rotation.y = mouseX * 0.0001;
+        // IA Toggle Logic
+        const toggle = document.getElementById('ia-toggle');
+        const modal = document.getElementById('ia-modal');
+        let isOpen = false;
+
+        toggle.addEventListener('click', () => {
+            isOpen = !isOpen;
+            if (isOpen) {
+                modal.classList.remove('hidden');
+                gsap.fromTo(modal, { opacity: 0, scale: 0.5, y: 20 }, { opacity: 1, scale: 1, y: 0, duration: 0.5, ease: "back.out(1.7)" });
+            } else {
+                gsap.to(modal, { opacity: 0, scale: 0.5, y: 20, duration: 0.3, ease: "power2.in", onComplete: () => modal.classList.add('hidden') });
+            }
         });
     </script>
 </body>
