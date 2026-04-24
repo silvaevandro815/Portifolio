@@ -117,7 +117,7 @@
         .section-heading .muted { color: #4B5563; }
 
         /* Stats */
-        .stat-number { font-family: 'Inter', sans-serif; font-weight: 900; padding-right: 0.25rem; background: linear-gradient(135deg, #007BFF, #00FF99); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .stat-number { font-family: 'Inter', sans-serif; font-weight: 900; padding-right: 1rem; padding-bottom: 0.2rem; display: inline-block; background: linear-gradient(135deg, #007BFF, #00FF99); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
         /* Tag pill */
         .tag-pill { font-size: 0.65rem; font-weight: 900; letter-spacing: 0.15em; text-transform: uppercase; padding: 0.25rem 0.75rem; border-radius: 999px; }
@@ -150,15 +150,15 @@
     </header>
 
     <!-- Hero Section -->
-    <section id="hero" class="relative min-h-screen flex items-center px-6 pt-32 overflow-hidden">
-        <div class="absolute top-1/4 right-0 w-[600px] h-[600px] glow-blue -z-10"></div>
+    <section id="hero" class="relative min-h-screen flex items-center px-6 pt-32 pb-16 overflow-hidden">
+        <div class="absolute top-1/4 right-0 w-[300px] h-[300px] md:w-[600px] md:h-[600px] glow-blue -z-10"></div>
         <div class="max-w-7xl mx-auto w-full grid md:grid-cols-2 gap-16 items-center">
             <div class="space-y-8" id="hero-text">
                 <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyber-blue/10 border border-cyber-blue/20">
                     <span class="w-2 h-2 rounded-full bg-cyber-blue animate-ping"></span>
                     <span class="text-xs font-black text-cyber-blue uppercase tracking-widest">Disponível para Projetos</span>
                 </div>
-                <h1 class="text-6xl md:text-8xl leading-[0.9] text-white">
+                <h1 class="text-5xl md:text-6xl lg:text-7xl leading-[1.1] text-white tracking-tight">
                     Arquitetando o <span class="text-transparent bg-clip-text bg-linear-to-r from-cyber-blue to-cyber-neon">Futuro</span> com IA e Automação
                 </h1>
                 <p class="text-lg md:text-xl text-gray-400 max-w-xl leading-relaxed font-light">
@@ -265,13 +265,20 @@
     </section>
 
     <!-- Bento Grid Stack -->
-    <section id="stack" class="py-32 px-6 max-w-7xl mx-auto">
-        <div class="mb-20 space-y-4">
+    <section id="stack" class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="mb-12 space-y-4 text-center md:text-left">
             <p class="text-cyber-blue text-sm font-black uppercase tracking-[0.3em]">Core Tecnológico</p>
-            <h2 class="text-5xl md:text-6xl">Ferramentas de <span class="text-gray-500">Próxima Geração</span></h2>
+            <h2 class="text-4xl md:text-5xl lg:text-6xl">Ferramentas de <span class="text-gray-500">Próxima Geração</span></h2>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-2 gap-6 h-full md:h-[600px]">
+        <div class="flex flex-col lg:flex-row gap-8">
+            <!-- Instagram Video Embed (Preenchendo o Vão) -->
+            <div class="lg:w-1/3 flex justify-center items-center bg-[#0D0D0D] rounded-3xl p-4 border border-white/5">
+                <iframe src="https://www.instagram.com/p/DRX-SjICFOZ/embed" width="100%" height="480" frameborder="0" scrolling="no" allowtransparency="true" class="rounded-2xl max-w-[400px]"></iframe>
+            </div>
+
+            <!-- Bento Grid Items -->
+            <div class="lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-6 h-auto">
             <!-- n8n -->
             <div class="md:col-span-2 bento-item bg-linear-to-br from-cyber-gray to-[#262626]">
                 <div class="flex justify-between items-start mb-8">
@@ -281,7 +288,7 @@
                     <span class="text-[10px] font-black uppercase tracking-widest text-orange-500 bg-orange-500/5 px-3 py-1 rounded-full border border-orange-500/20">Mastery</span>
                 </div>
                 <div>
-                    <h3 class="text-3xl mb-2 uppercase">n8n Automation</h3>
+                    <h3 class="text-2xl mb-2 uppercase">n8n Automation</h3>
                     <p class="text-sm text-gray-500 leading-relaxed">Criação de workflows complexos conectando centenas de ferramentas para automação empresarial absoluta.</p>
                 </div>
             </div>
@@ -311,13 +318,13 @@
             <!-- 360 Vision -->
             <div class="md:col-span-2 bento-item border border-white/10 relative overflow-hidden group">
                 <img src="ia_concept.jpg" alt="IA Concept" class="absolute inset-0 w-full h-full object-cover opacity-20 group-hover:opacity-40 transition-opacity duration-700">
-                <div class="relative z-10 flex items-center gap-6">
-                    <div class="p-6 bg-white/5 rounded-full border border-white/10">
-                        <i data-lucide="eye" class="w-12 h-12 text-white"></i>
+                <div class="relative z-10 flex flex-col sm:flex-row items-start sm:items-center gap-4">
+                    <div class="p-4 bg-white/5 rounded-full border border-white/10">
+                        <i data-lucide="eye" class="w-8 h-8 text-white"></i>
                     </div>
                     <div>
-                        <h3 class="text-4xl font-black uppercase tracking-tighter">Visão 360°</h3>
-                        <p class="text-gray-400 font-semibold italic text-lg uppercase tracking-widest">Gestão Pública + Tecnologia</p>
+                        <h3 class="text-2xl font-black uppercase tracking-tighter text-white">Visão 360°</h3>
+                        <p class="text-gray-400 font-semibold italic text-sm uppercase tracking-widest mt-1">Gestão Pública + Tecnologia</p>
                     </div>
                 </div>
             </div>
@@ -342,9 +349,10 @@
                         <i data-lucide="layers" class="w-6 h-6"></i>
                     </div>
                     <h3 class="text-xl mb-3 uppercase tracking-tighter text-white font-black">NoCode / LowCode</h3>
-                    <p class="text-sm text-gray-200 leading-relaxed">Desenvolvimento ágil de aplicações, MVPs e ferramentas tecnológicas sem necessidade de código complexo.</p>
+                    <p class="text-sm text-gray-200 leading-relaxed">Desenvolvimento ágil de aplicações e automações sem código complexo.</p>
                 </div>
             </div>
+        </div>
         </div>
     </section>
 
