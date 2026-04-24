@@ -504,18 +504,18 @@
                 Pronto para <span class="text-cyber-blue">automatizar</span> sua visão? <br>
                 <span class="text-gray-500">Vamos construir algo extraordinário.</span>
             </h2>
-            <div class="flex justify-center gap-6 pt-8">
-                <a href="https://www.linkedin.com/in/evandro-sillva-gallina-83097b1aa" target="_blank" class="flex items-center gap-3 px-6 py-4 rounded-2xl bg-[#0A66C2]/20 border border-[#0A66C2]/40 hover:bg-[#0A66C2]/40 transition-all group">
-                    <i data-lucide="linkedin" class="w-6 h-6 text-[#0A66C2]"></i>
-                    <span class="text-sm font-black text-white">LinkedIn</span>
+            <div class="flex flex-wrap justify-center items-center gap-4 pt-8">
+                <a href="https://www.linkedin.com/in/evandro-sillva-gallina-83097b1aa" target="_blank" class="flex items-center gap-3 px-5 py-3 sm:px-6 sm:py-4 rounded-2xl bg-[#0A66C2]/20 border border-[#0A66C2]/40 hover:bg-[#0A66C2]/40 transition-all group">
+                    <i data-lucide="linkedin" class="w-5 h-5 sm:w-6 sm:h-6 text-[#0A66C2]"></i>
+                    <span class="text-xs sm:text-sm font-black text-white">LinkedIn</span>
                 </a>
-                <a href="https://www.instagram.com/evandrosilvagallina" target="_blank" class="flex items-center gap-3 px-6 py-4 rounded-2xl bg-gradient-to-r from-[#E1306C]/20 to-[#F77737]/20 border border-[#E1306C]/40 hover:from-[#E1306C]/40 hover:to-[#F77737]/40 transition-all group">
-                    <i data-lucide="instagram" class="w-6 h-6 text-[#E1306C]"></i>
-                    <span class="text-sm font-black text-white">Instagram</span>
+                <a href="https://www.instagram.com/evandrosilvagallina" target="_blank" class="flex items-center gap-3 px-5 py-3 sm:px-6 sm:py-4 rounded-2xl bg-gradient-to-r from-[#E1306C]/20 to-[#F77737]/20 border border-[#E1306C]/40 hover:from-[#E1306C]/40 hover:to-[#F77737]/40 transition-all group">
+                    <i data-lucide="instagram" class="w-5 h-5 sm:w-6 sm:h-6 text-[#E1306C]"></i>
+                    <span class="text-xs sm:text-sm font-black text-white">Instagram</span>
                 </a>
-                <a href="https://wa.me/5532984587255" target="_blank" class="flex items-center gap-3 px-6 py-4 rounded-2xl bg-[#25D366]/20 border border-[#25D366]/40 hover:bg-[#25D366]/40 transition-all group">
-                    <i data-lucide="message-square" class="w-6 h-6 text-[#25D366]"></i>
-                    <span class="text-sm font-black text-white">WhatsApp</span>
+                <a href="https://wa.me/5532984587255" target="_blank" class="flex items-center gap-3 px-5 py-3 sm:px-6 sm:py-4 rounded-2xl bg-[#25D366]/20 border border-[#25D366]/40 hover:bg-[#25D366]/40 transition-all group">
+                    <i data-lucide="message-square" class="w-5 h-5 sm:w-6 sm:h-6 text-[#25D366]"></i>
+                    <span class="text-xs sm:text-sm font-black text-white">WhatsApp</span>
                 </a>
             </div>
             <p class="text-[10px] font-black uppercase tracking-[0.5em] opacity-30 pt-20">
@@ -563,14 +563,7 @@
             opacity: 0, scale: 0.8, duration: 1.5, ease: "expo.out", delay: 0.3
         });
 
-        // Bento Grid Animation
-        gsap.from(".bento-item", {
-            scrollTrigger: {
-                trigger: "#stack",
-                start: "top 80%",
-            },
-            opacity: 0, y: 30, stagger: 0.1, duration: 0.8, ease: "power2.out"
-        });
+        // Bento Grid Animacao removida para garantir carregamento ao lado do video.
 
         // Experience Timeline Animation
         gsap.from(".exp-card", {
