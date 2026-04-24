@@ -13,6 +13,9 @@
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
+    <!-- Three.js for 3D Background -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    
     <!-- GSAP for Luxury Animations -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
@@ -127,6 +130,9 @@
     </style>
 </head>
 <body class="overflow-x-hidden">
+    <!-- 3D Background Canvas -->
+    <canvas id="bg-canvas" class="fixed inset-0 z-[-20] w-full h-full pointer-events-none opacity-40"></canvas>
+    
     <div class="scanline"></div>
 
     <!-- Header / Nav -->
@@ -595,6 +601,119 @@
             } else {
                 gsap.to(modal, { opacity: 0, scale: 0.5, y: 20, duration: 0.3, ease: "power2.in", onComplete: () => modal.classList.add('hidden') });
             }
+        });
+
+        // ==========================================
+        // 3D Background - Three.js Implementation
+        // ==========================================
+        const canvas = document.getElementById('bg-canvas');
+        const scene = new THREE.Scene();
+        // Camera with subtle perspective
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({ canvas: canvas, alpha: true, antialias: true });
+        
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(window.devicePixelRatio);
+        
+        // AI Core - Inner Icosahedron
+        const geometry = new THREE.IcosahedronGeometry(2, 1);
+        const materialBlue = new THREE.MeshBasicMaterial({ 
+            color: 0x007BFF, 
+            wireframe: true, 
+            transparent: true, 
+            opacity: 0.3 
+        });
+        const sphereBlue = new THREE.Mesh(geometry, materialBlue);
+        
+        // AI Core - Outer Shell
+        const geometryNeon = new THREE.IcosahedronGeometry(2.5, 1);
+        const materialNeon = new THREE.MeshBasicMaterial({ 
+            color: 0x00FF99, 
+            wireframe: true, 
+            transparent: true, 
+            opacity: 0.1 
+        });
+        const sphereNeon = new THREE.Mesh(geometryNeon, materialNeon);
+        
+        // Add to scene slightly to the right to fit the hero layout
+        const coreGroup = new THREE.Group();
+        coreGroup.add(sphereBlue);
+        coreGroup.add(sphereNeon);
+        coreGroup.position.x = window.innerWidth > 768 ? 2 : 0; 
+        scene.add(coreGroup);
+        
+        // Data Dust Particles
+        const particlesGeometry = new THREE.BufferGeometry();
+        const particlesCount = window.innerWidth > 768 ? 400 : 150;
+        const posArray = new Float32Array(particlesCount * 3);
+        
+        for(let i = 0; i < particlesCount * 3; i++) {
+            posArray[i] = (Math.random() - 0.5) * 20; // Spread randomly
+        }
+        
+        particlesGeometry.setAttribute('position', new THREE.BufferAttribute(posArray, 3));
+        const particlesMaterial = new THREE.PointsMaterial({
+            size: 0.03,
+            color: 0xffffff,
+            transparent: true,
+            opacity: 0.5
+        });
+        
+        const particlesMesh = new THREE.Points(particlesGeometry, particlesMaterial);
+        scene.add(particlesMesh);
+        
+        camera.position.z = 6;
+        
+        // Mouse Interaction
+        let mouseX = 0;
+        let mouseY = 0;
+        let targetX = 0;
+        let targetY = 0;
+        const windowHalfX = window.innerWidth / 2;
+        const windowHalfY = window.innerHeight / 2;
+        
+        document.addEventListener('mousemove', (event) => {
+            mouseX = (event.clientX - windowHalfX);
+            mouseY = (event.clientY - windowHalfY);
+        });
+        
+        // Animation Loop
+        const clock = new THREE.Clock();
+        function animate() {
+            requestAnimationFrame(animate);
+            const elapsedTime = clock.getElapsedTime();
+            
+            // Rotate the core
+            sphereBlue.rotation.y = elapsedTime * 0.1;
+            sphereBlue.rotation.x = elapsedTime * 0.05;
+            
+            sphereNeon.rotation.y = -elapsedTime * 0.08;
+            sphereNeon.rotation.x = -elapsedTime * 0.04;
+            
+            // Rotate dust slowly
+            particlesMesh.rotation.y = elapsedTime * 0.03;
+            
+            // Smooth Parallax effect based on mouse
+            targetX = mouseX * 0.001;
+            targetY = mouseY * 0.001;
+            
+            coreGroup.rotation.y += 0.05 * (targetX - coreGroup.rotation.y);
+            coreGroup.rotation.x += 0.05 * (targetY - coreGroup.rotation.x);
+            
+            camera.position.x += (mouseX * 0.002 - camera.position.x) * 0.05;
+            camera.position.y += (-mouseY * 0.002 - camera.position.y) * 0.05;
+            camera.lookAt(scene.position);
+            
+            renderer.render(scene, camera);
+        }
+        animate();
+        
+        // Responsive handling
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            coreGroup.position.x = window.innerWidth > 768 ? 2 : 0;
         });
     </script>
 </body>
