@@ -39,7 +39,7 @@
         }
     </script>
 
-    <style>
+    <style type="text/tailwindcss">
         @layer base {
             body {
                 @apply bg-cyber-black text-white antialiased selection:bg-cyber-blue selection:text-white;
@@ -117,7 +117,7 @@
         .section-heading .muted { color: #4B5563; }
 
         /* Stats */
-        .stat-number { font-family: 'Inter', sans-serif; font-weight: 900; background: linear-gradient(135deg, #007BFF, #00FF99); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .stat-number { font-family: 'Inter', sans-serif; font-weight: 900; padding-right: 0.25rem; background: linear-gradient(135deg, #007BFF, #00FF99); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 
         /* Tag pill */
         .tag-pill { font-size: 0.65rem; font-weight: 900; letter-spacing: 0.15em; text-transform: uppercase; padding: 0.25rem 0.75rem; border-radius: 999px; }
@@ -136,12 +136,12 @@
                 <img src="logo.jpg" alt="Logo Evandro SG" class="h-8 w-auto rounded-md shadow-[0_0_10px_rgba(0,123,255,0.3)]">
                 <span class="font-black text-xl tracking-tighter uppercase hidden sm:inline">EVANDRO<span class="text-cyber-blue">SG</span></span>
             </div>
-            <div class="hidden md:flex gap-10 text-[11px] font-extrabold uppercase tracking-widest opacity-60">
-                <a href="#hero" class="hover:text-cyber-blue transition">Início</a>
-                <a href="#about" class="hover:text-cyber-blue transition">Sobre</a>
-                <a href="#stack" class="hover:text-cyber-blue transition">Stack</a>
-                <a href="#projects" class="hover:text-cyber-blue transition">Projetos</a>
-                <a href="#experience" class="hover:text-cyber-blue transition">Trajetória</a>
+            <div class="hidden md:flex gap-10 text-[11px] font-extrabold uppercase tracking-widest text-white opacity-80">
+                <a href="#hero" class="hover:text-cyber-blue hover:opacity-100 transition">Início</a>
+                <a href="#about" class="hover:text-cyber-blue hover:opacity-100 transition">Sobre</a>
+                <a href="#stack" class="hover:text-cyber-blue hover:opacity-100 transition">Stack</a>
+                <a href="#projects" class="hover:text-cyber-blue hover:opacity-100 transition">Projetos</a>
+                <a href="#experience" class="hover:text-cyber-blue hover:opacity-100 transition">Trajetória</a>
             </div>
             <a href="https://wa.me/5532984587255" target="_blank" class="bg-white text-black text-[11px] font-black uppercase px-6 py-2 rounded-full hover:bg-cyber-blue hover:text-white transition-all shadow-lg shadow-white/5">
                 Consultoria
@@ -241,8 +241,8 @@
                 <div class="grid grid-cols-2 gap-4">
                     <div class="glass p-5 rounded-2xl border border-white/5">
                         <i data-lucide="graduation-cap" class="w-5 h-5 text-cyber-blue mb-3"></i>
-                        <p class="font-black text-sm">Comunicação Social</p>
-                        <p class="text-xs text-gray-500">Fac. Santa Marcelina</p>
+                        <p class="font-black text-sm">Gestão Pública</p>
+                        <p class="text-xs text-gray-500">Faculdade UNOPAR</p>
                     </div>
                     <div class="glass p-5 rounded-2xl border border-white/5">
                         <i data-lucide="award" class="w-5 h-5 text-cyber-neon mb-3"></i>
