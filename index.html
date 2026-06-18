@@ -83,9 +83,12 @@
         .bento-item p { color: #C0C8D8 !important; }
 
         /* Custom Scrollbar */
-        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
         ::-webkit-scrollbar-track { background: #0A0A0A; }
         ::-webkit-scrollbar-thumb { background: #007BFF; border-radius: 4px; }
+        
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
         /* Floating Animation */
         @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
@@ -508,6 +511,81 @@
                     </a>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Institutional Communication -->
+    <section id="audiovisual" class="py-32 px-6 max-w-7xl mx-auto border-t border-white/5 relative overflow-hidden">
+        <!-- Decoration -->
+        <div class="absolute top-0 right-1/4 w-[400px] h-[400px] glow-blue opacity-10 -z-10"></div>
+        
+        <div class="mb-20 text-center space-y-6">
+            <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyber-neon/10 border border-cyber-neon/20 mb-2">
+                <i data-lucide="video" class="w-4 h-4 text-cyber-neon"></i>
+                <span class="text-[10px] font-black text-cyber-neon uppercase tracking-widest">Audiovisual & Gestão Pública</span>
+            </div>
+            <h2 class="text-5xl md:text-6xl">Comunicação Institucional <br class="hidden md:block"><span class="text-gray-500">com Humor e Impacto</span></h2>
+            <p class="text-gray-400 max-w-4xl mx-auto leading-relaxed text-lg">
+                A comunicação do setor público não precisa ser burocrática ou entediante. Através da <span class="text-white font-bold">roteirização criativa, direção assertiva, captação audiovisual e edição dinâmica</span>, transformo informações institucionais complexas (como obras e serviços públicos) em conteúdos acessíveis, atrativos e com alto potencial viral.
+            </p>
+            <p class="text-gray-400 max-w-4xl mx-auto leading-relaxed">
+                Essa abordagem moderna, semelhante à utilizada por grandes marcas como Netflix e L'Oréal, quebra barreiras, gera empatia com o cidadão e garante um engajamento orgânico massivo nas redes sociais da Prefeitura.
+            </p>
+        </div>
+
+        <!-- Horizontal Scroll Container for Reels -->
+        <div class="flex overflow-x-auto gap-8 pb-8 snap-x snap-mandatory hide-scrollbar" style="scroll-behavior: smooth;">
+            <!-- Reel Embed 1 -->
+            <div class="snap-center shrink-0 w-[300px] md:w-[340px] bg-[#0E0E0E] rounded-[32px] border border-white/10 overflow-hidden shadow-2xl relative group">
+                <iframe src="https://www.instagram.com/reel/DXIEZh8keh9/embed" width="100%" height="600" frameborder="0" scrolling="no" allowtransparency="true" class="relative z-10 bg-white"></iframe>
+                <div class="absolute inset-0 bg-cyber-blue/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none z-20"></div>
+            </div>
+            <!-- Reel Embed 2 -->
+            <div class="snap-center shrink-0 w-[300px] md:w-[340px] bg-[#0E0E0E] rounded-[32px] border border-white/10 overflow-hidden shadow-2xl relative group">
+                <iframe src="https://www.instagram.com/reel/DW7Jt2dkU5c/embed" width="100%" height="600" frameborder="0" scrolling="no" allowtransparency="true" class="relative z-10 bg-white"></iframe>
+            </div>
+            <!-- Reel Embed 3 -->
+            <div class="snap-center shrink-0 w-[300px] md:w-[340px] bg-[#0E0E0E] rounded-[32px] border border-white/10 overflow-hidden shadow-2xl relative group">
+                <iframe src="https://www.instagram.com/reel/DXMKqblpS3L/embed" width="100%" height="600" frameborder="0" scrolling="no" allowtransparency="true" class="relative z-10 bg-white"></iframe>
+            </div>
+            <!-- Reel Embed 4 -->
+            <div class="snap-center shrink-0 w-[300px] md:w-[340px] bg-[#0E0E0E] rounded-[32px] border border-white/10 overflow-hidden shadow-2xl relative group">
+                <iframe src="https://www.instagram.com/reel/DWR-iuikRiy/embed" width="100%" height="600" frameborder="0" scrolling="no" allowtransparency="true" class="relative z-10 bg-white"></iframe>
+            </div>
+            <!-- Reel Embed 5 -->
+            <div class="snap-center shrink-0 w-[300px] md:w-[340px] bg-[#0E0E0E] rounded-[32px] border border-white/10 overflow-hidden shadow-2xl relative group">
+                <iframe src="https://www.instagram.com/reel/DWEHxreJML2/embed" width="100%" height="600" frameborder="0" scrolling="no" allowtransparency="true" class="relative z-10 bg-white"></iframe>
+            </div>
+            <!-- Reel Embed 6 -->
+            <div class="snap-center shrink-0 w-[300px] md:w-[340px] bg-[#0E0E0E] rounded-[32px] border border-white/10 overflow-hidden shadow-2xl relative group">
+                <iframe src="https://www.instagram.com/reel/DTjIpbzkVhE/embed" width="100%" height="600" frameborder="0" scrolling="no" allowtransparency="true" class="relative z-10 bg-white"></iframe>
+            </div>
+            <!-- Reel Embed 7 -->
+            <div class="snap-center shrink-0 w-[300px] md:w-[340px] bg-[#0E0E0E] rounded-[32px] border border-white/10 overflow-hidden shadow-2xl relative group">
+                <iframe src="https://www.instagram.com/reel/DOQiLtXES4I/embed" width="100%" height="600" frameborder="0" scrolling="no" allowtransparency="true" class="relative z-10 bg-white"></iframe>
+            </div>
+            <!-- Reel Embed 8 -->
+            <div class="snap-center shrink-0 w-[300px] md:w-[340px] bg-[#0E0E0E] rounded-[32px] border border-white/10 overflow-hidden shadow-2xl relative group">
+                <iframe src="https://www.instagram.com/reel/DO-xkCkkXfx/embed" width="100%" height="600" frameborder="0" scrolling="no" allowtransparency="true" class="relative z-10 bg-white"></iframe>
+            </div>
+            <!-- Reel Embed 9 -->
+            <div class="snap-center shrink-0 w-[300px] md:w-[340px] bg-[#0E0E0E] rounded-[32px] border border-white/10 overflow-hidden shadow-2xl relative group">
+                <iframe src="https://www.instagram.com/reel/DXyyjnmpwSd/embed" width="100%" height="600" frameborder="0" scrolling="no" allowtransparency="true" class="relative z-10 bg-white"></iframe>
+            </div>
+            <!-- Reel Embed 10 -->
+            <div class="snap-center shrink-0 w-[300px] md:w-[340px] bg-[#0E0E0E] rounded-[32px] border border-white/10 overflow-hidden shadow-2xl relative group">
+                <iframe src="https://www.instagram.com/reel/DYNpBPjRPZj/embed" width="100%" height="600" frameborder="0" scrolling="no" allowtransparency="true" class="relative z-10 bg-white"></iframe>
+            </div>
+            <!-- Reel Embed 11 -->
+            <div class="snap-center shrink-0 w-[300px] md:w-[340px] bg-[#0E0E0E] rounded-[32px] border border-white/10 overflow-hidden shadow-2xl relative group">
+                <iframe src="https://www.instagram.com/reel/DY0PmUARER8/embed" width="100%" height="600" frameborder="0" scrolling="no" allowtransparency="true" class="relative z-10 bg-white"></iframe>
+            </div>
+        </div>
+        
+        <div class="flex justify-center mt-8 gap-3 text-gray-500">
+            <i data-lucide="arrow-left" class="w-5 h-5"></i>
+            <span class="text-[10px] font-black uppercase tracking-widest mt-0.5">Deslize para ver todos os vídeos</span>
+            <i data-lucide="arrow-right" class="w-5 h-5"></i>
         </div>
     </section>
 
