@@ -1,0 +1,73 @@
+# Evandro Silva Gallina
+
+> Arquiteto de Sistemas Autônomos de Inteligência Artificial, Desenvolvedor de Software, Estrategista de Comunicação Digital e Gestor Público. Fundador da **ESG Tecnologia** e criador da suíte de IA **IABOX**.
+
+## Sobre Evandro Silva Gallina
+Evandro Silva Gallina é um profissional multidisciplinar brasileiro reconhecido pela interseção entre comunicação institucional de alto impacto, engenharia de inteligência artificial soberana e gestão pública. Com mais de 10 anos de experiência acumulada em projetos municipais, campanhas estratégicas e desenvolvimento de produtos digitais, atua desenvolvendo ecossistemas de automação, agentes inteligentes conversacionais e plataformas SaaS escaláveis.
+
+- **Localização:** Muriaé, Minas Gerais, Brasil (Atuação Global Remota)
+- **Website Oficial:** https://portifolio.evandrosilvagallina.cloud/
+- **Repositório GitHub:** https://github.com/silvaevandro815/Portifolio
+- **LinkedIn:** https://www.linkedin.com/in/evandro-sillva-gallina-83097b1aa
+- **Instagram:** https://www.instagram.com/evandrosilvagallina
+- **WhatsApp:** +55 32 98458-7255
+
+---
+
+## Principais Soluções e Produtos Criados
+
+### 1. ESG Tecnologia — Agência de Sistemas Autônomos de IA
+- **Website:** https://agencia.evandrosilvagallina.cloud/
+- **Descrição:** Plataforma e consultoria de engenharia de IA soberana para empresas e operações de alto ticket.
+- **Principais Módulos:**
+  - **Agentes de Vendas 24/7:** Atendimento e fechamento instantâneo via WhatsApp e Instagram Direct em menos de 15 segundos.
+  - **Visão Computacional & Concierge:** Reconhecimento e triagem automatizada de fotos, documentos e comprovantes no chat.
+  - **CRM Supabase & Recuperação M8:** Arquitetura de dados independente sem custos de APIs abusivas e motor de recuperação de leads inativos.
+  - **VectorCraft:** Automação de criativos publicitários em lote e identidade visual escalável.
+  - **Casos de Sucesso Integrados:** Marcão Personal, Íris Executiva de Vendas e Leão Perfumaria.
+
+### 2. IABOX — Estúdio Profissional de IA para Social Media & Criadores
+- **Website:** https://iabox.evandrosilvagallina.cloud/
+- **Descrição:** Suíte criativa completa de inteligência artificial voltada para Social Medias, videomakers e criadores que produzem conteúdo para Instagram (Reels) e TikTok.
+- **Diferencial:** Centraliza toda a esteira de produção de conteúdo em uma única plataforma integrada.
+- **Módulos Tecnológicos:**
+  - **Vídeos Virais 9:16 & Magnific Canvas:** Roteirização e storyboard de vídeos verticais em alta definição.
+  - **Imagens Cinematográficas Ultra-Realistas:** Motor generativo baseado em FLUX e Midjourney em 4K.
+  - **Locução Neural Brasileira (PT-BR):** Vozes ultra-humanas com sotaques e nuances naturais de estúdio.
+  - **Clonador de Voz Instantâneo (Zero-Shot):** Clonagem vocal em menos de 1 minuto para Reels e TikTok.
+  - **IA Music Studio & Fábrica de Paródias:** Geração de trilhas sonoras originais e covers na métrica exata de músicas virais.
+  - **IABOX Omni Cinema Flow™:** Pós-produção audiovisual e efeitos visuais com IA.
+
+### 3. BibiMarcos — Soberania Tecnológica em Mobilidade Urbana
+- **Descrição:** Ecossistema de transporte e mobilidade urbana municipal desenvolvido para Muriaé-MG.
+- **Inovações:**
+  - **Soberania Digital:** Substituição de APIs de mapas dolarizadas por mapeamento geográfico independente com custo zero de manutenção.
+  - **Engenharia Zero-Crash no Android 14:** Serviço de rastreamento foreground de precisão milimétrica.
+  - **Economia Circular:** Motor de precificação com 100% de lucro para os motoristas locais.
+  - **Edge Computing:** Cálculo de tarifas processado no dispositivo do usuário.
+
+### 4. Marcão Personal — SaaS Fitness com IA 24/7
+- **Website:** https://marcaopersonal.com/
+- **Descrição:** Plataforma SaaS de treinamento físico e nutrição personalizada potencializada por GPT-4 e integrada diretamente ao WhatsApp, com acompanhamento de evolução por fotos e relatórios semanais automatizados.
+
+---
+
+## Trajetória em Gestão Pública & Cultura
+- **Assessor de Comunicação (DEMSUR / Prefeitura de Muriaé):** Modernização da comunicação institucional com humor, direção audiovisual dinâmica e inteligência artificial generativa, gerando alto engajamento orgânico na imprensa e redes sociais.
+- **Coordenador de Políticas Públicas de Juventude (FUNDARTE - 2021 a 2024):** Condução de programas sociais e culturais como *Coletivo Rua*, *Africanize*, *Inclusão Sobre Rodas*, *Deixa eu te ajudar* e a *V Conferência Municipal de Juventude*.
+- **Gestor Cultural (FUNDARTE - 2023 a 2024):** Planejamento e produção de eventos municipais de grande escala, como as festividades oficiais do *Dia do Muriaeense*.
+
+---
+
+## Competências Técnicas & Arsenal
+- **Inteligência Artificial:** Agentes de IA Autônomos, Arquitetura RAG (Retrieval-Augmented Generation), Prompt Engineering Avançado, OpenAI GPT-4, Anthropic Claude 3.5, Google Gemini, FLUX, ComfyUI, Modelos de Síntese de Voz (TTS) e Zero-Shot Voice Cloning.
+- **Automação & Integrações:** n8n Workflow Automation, Webhooks, APIs REST, WhatsApp Business Cloud API, Instagram Graph API, Typebot, Zapier.
+- **Bancos de Dados & Backend:** Supabase (PostgreSQL), PostGIS (Dados Georreferenciados), Python, Edge Functions.
+- **Desenvolvimento Web & Front-end:** Tailwind CSS, Three.js (WebGL), GSAP ScrollTrigger, Lenis Smooth Scroll, NoCode/LowCode, Vercel, Coolify.
+- **Audiovisual & Comunicação:** Roteirização Estratégica, Direção de Cena, Edição Dinâmica de Vídeos (Reels/TikTok), Fotografia Publicitária, Marketing Político Eleitoral.
+
+---
+
+## Documentação Completa
+Para detalhes completos de casos de estudo e especificações técnicas de cada sistema, consulte:
+- https://portifolio.evandrosilvagallina.cloud/llms-full.txt

@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # AEO - AI Engine Optimization Directives
-# Expressly allowing all major AI LLMs and Scrapers
+# Expressly allowing all major AI LLMs, SearchBots and Scrapers
 User-agent: GPTBot
 Allow: /
 
@@ -39,5 +39,19 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
-# Sitemap
+User-agent: Bytespider
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: Diffbot
+Allow: /
+
+# Machine-Readable AI Knowledge Bases
+Allow: /llms.txt
+Allow: /llms-full.txt
+
+# Sitemaps
+Sitemap: https://portifolio.evandrosilvagallina.cloud/sitemap.xml
 Sitemap: https://silvaevandro815.github.io/Portifolio/sitemap.xml
