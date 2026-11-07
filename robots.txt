@@ -104,4 +104,3 @@ Allow: /*.txt
 # SITEMAPS
 # ============================================================
 Sitemap: https://portifolio.evandrosilvagallina.cloud/sitemap.xml
-Sitemap: https://silvaevandro815.github.io/Portifolio/sitemap.xml
