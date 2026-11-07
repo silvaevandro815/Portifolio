@@ -1,8 +1,37 @@
+# robots.txt for Evandro Silva Gallina Portfolio
+# Website: https://portifolio.evandrosilvagallina.cloud/
+# Author: Evandro Silva Gallina (ESG Tecnologia)
+
 User-agent: *
 Allow: /
 
-# AEO - AI Engine Optimization Directives
-# Expressly allowing all major AI LLMs, SearchBots and Scrapers
+# ============================================================
+# SEARCH ENGINE BOTS (Google, Bing, Yahoo, DuckDuckGo, Baidu)
+# ============================================================
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# ============================================================
+# AI ENGINE OPTIMIZATION (AEO & GEO) - LLMs & AI SEARCH BOTS
+# Expressly granting full indexing and retrieval permissions
+# ============================================================
+
+# OpenAI (ChatGPT, ChatGPT Search, SearchGPT)
 User-agent: GPTBot
 Allow: /
 
@@ -12,6 +41,7 @@ Allow: /
 User-agent: OAI-SearchBot
 Allow: /
 
+# Anthropic (Claude, Claude Search)
 User-agent: anthropic-ai
 Allow: /
 
@@ -21,22 +51,33 @@ Allow: /
 User-agent: Claude-Web
 Allow: /
 
+# Perplexity AI
 User-agent: PerplexityBot
 Allow: /
 
+# Google Gemini & AI Overviews
 User-agent: Google-Extended
 Allow: /
 
-User-agent: CCBot
+User-agent: GoogleOther
 Allow: /
 
+# Apple Intelligence
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+# Meta AI (Llama, Instagram & WhatsApp AI)
 User-agent: Meta-ExternalAgent
 Allow: /
 
 User-agent: FacebookBot
 Allow: /
 
-User-agent: Applebot-Extended
+# Other Major AI & Web Crawlers
+User-agent: CCBot
 Allow: /
 
 User-agent: Bytespider
@@ -48,10 +89,19 @@ Allow: /
 User-agent: Diffbot
 Allow: /
 
-# Machine-Readable AI Knowledge Bases
+User-agent: YouBot
+Allow: /
+
+# ============================================================
+# AI MACHINE-READABLE KNOWLEDGE BASES
+# ============================================================
 Allow: /llms.txt
 Allow: /llms-full.txt
+Allow: /sitemap.xml
+Allow: /*.txt
 
-# Sitemaps
+# ============================================================
+# SITEMAPS
+# ============================================================
 Sitemap: https://portifolio.evandrosilvagallina.cloud/sitemap.xml
 Sitemap: https://silvaevandro815.github.io/Portifolio/sitemap.xml
