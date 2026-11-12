@@ -448,7 +448,7 @@
             </div>
             <div class="hidden md:flex gap-8 lg:gap-10 text-[11px] font-extrabold uppercase tracking-widest text-white opacity-80">
                 <a href="#hero" class="hover:text-cyber-blue hover:opacity-100 transition">Início</a>
-                <a href="#about" class="hover:text-cyber-blue hover:opacity-100 transition">Sobre</a>
+                <a href="#historia" class="hover:text-cyber-blue hover:opacity-100 transition">Minha História</a>
                 <a href="#stack" class="hover:text-cyber-blue hover:opacity-100 transition">Stack</a>
                 <a href="#agencia" class="hover:text-cyber-neon hover:opacity-100 transition text-cyber-neon/90">Agência IA</a>
                 <a href="#experience" class="hover:text-cyber-blue hover:opacity-100 transition">Trajetória</a>
@@ -491,28 +491,13 @@
                 <div class="absolute -top-10 -right-10 w-[350px] h-[350px] glow-blue opacity-60 pointer-events-none"></div>
                 <div class="absolute -bottom-10 -left-10 w-[300px] h-[300px] bg-cyber-neon/15 blur-[120px] rounded-full pointer-events-none"></div>
                 
-                <!-- Main Modern Card Container with 3D Video Loop / Image Toggle -->
-                <div class="spotlight-card relative z-10 w-full max-w-[380px] sm:max-w-[440px] aspect-[4/5] sm:aspect-[3/4] mx-auto rounded-[40px] p-2.5 sm:p-3 glass border border-white/20 shadow-[0_25px_60px_-15px_rgba(0,123,255,0.35)] transition-all duration-700 hover:border-cyber-blue/50">
-                    <div class="relative w-full h-full rounded-[32px] overflow-hidden bg-[#0A0D14] shadow-inner">
-                        <!-- 3D Video Loop (Hero) -->
-                        <video id="hero-video-el" autoplay loop muted playsinline poster="videos/hero-loop-poster.jpg" class="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105">
-                            <source src="videos/hero-loop.mp4" type="video/mp4">
-                        </video>
-                        <!-- Original EVANDRO.jpg (Toggled via button) -->
-                        <img id="hero-img-el" src="EVANDRO.jpg" alt="Evandro Silva Gallina - Arquiteto de IA e Especialista em Comunicação" class="hidden w-full h-full object-cover object-top bg-white">
-                        <!-- Bottom ambient shadow to melt seamlessly into dark container -->
-                        <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#0A0D14] via-[#0A0D14]/40 to-transparent pointer-events-none"></div>
+                <!-- Main Modern Card Container for EVANDRO.jpg with White Studio Background -->
+                <div class="spotlight-card relative z-10 w-full max-w-[380px] sm:max-w-[420px] aspect-square mx-auto rounded-[40px] p-2.5 sm:p-3 glass border border-white/20 shadow-[0_25px_60px_-15px_rgba(0,123,255,0.35)] transition-all duration-700 hover:border-cyber-blue/50">
+                    <div class="relative w-full h-full rounded-[32px] overflow-hidden bg-white shadow-inner">
+                        <img src="EVANDRO.jpg" alt="Evandro Silva Gallina - Arquiteto de IA e Especialista em Comunicação" class="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105">
                         <!-- Subtle glass reflex border inside -->
-                        <div class="absolute inset-0 rounded-[32px] ring-1 ring-inset ring-white/10 pointer-events-none"></div>
+                        <div class="absolute inset-0 rounded-[32px] ring-1 ring-inset ring-black/5 pointer-events-none"></div>
                     </div>
-                </div>
-
-                <!-- Instant Media Switcher Pill -->
-                <div class="flex justify-center mt-4">
-                    <button type="button" id="toggle-hero-view-btn" onclick="toggleHeroMedia()" class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-[11px] font-black tracking-wider uppercase glass border border-white/15 hover:border-cyber-blue/50 text-gray-300 hover:text-white transition-all shadow-lg cursor-pointer">
-                        <span class="w-2 h-2 rounded-full bg-cyber-neon animate-pulse"></span>
-                        <span id="hero-toggle-label">Modo Ativo: Vídeo IA 3D • Clique p/ Foto Original</span>
-                    </button>
                 </div>
 
                 <!-- Floating Glass Status Badge: Top Left -->
@@ -565,55 +550,138 @@
         </div>
     </section>
 
-    <!-- About Section -->
-    <section id="about" class="py-32 px-6">
-        <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-20 items-center">
-            <div class="relative">
-                <img src="ia_concept.jpg" alt="Evandro Silva Gallina - IA" class="w-full rounded-[40px] border border-white/10 shadow-2xl object-cover object-center aspect-square">
-                <div class="absolute -top-6 -left-6 glass p-5 rounded-2xl border border-cyber-neon/30">
-                    <p class="text-[10px] font-black uppercase text-cyber-neon tracking-widest mb-1">Formação</p>
-                    <p class="font-black text-sm">Bacharel em Comunicação</p>
-                    <p class="text-xs text-gray-500">Universidade UNOPAR Muriaé</p>
+<!-- Secao Historia -->
+    <div id="about" class="relative -top-24"></div>
+    <section id="historia" class="py-32 px-6 relative overflow-hidden border-t border-white/5" style="background: linear-gradient(180deg, #06070A 0%, #0A0D14 50%, #06070A 100%)">
+        <!-- Ambient Glowing Orbs -->
+        <div class="absolute top-1/3 left-0 w-[500px] h-[500px] glow-blue opacity-20 pointer-events-none -z-10"></div>
+        <div class="absolute bottom-10 right-0 w-[450px] h-[450px] glow-violet opacity-20 pointer-events-none -z-10"></div>
+
+        <div class="max-w-7xl mx-auto">
+            <!-- Section Header -->
+            <div class="mb-20 text-center space-y-4 max-w-3xl mx-auto">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-cyber-blue/10 border border-cyber-blue/20">
+                    <span class="w-2 h-2 rounded-full bg-cyber-blue animate-pulse"></span>
+                    <span class="text-[10px] font-black text-cyber-blue uppercase tracking-widest">Minha História • Raízes & Propósito</span>
                 </div>
-                <div class="absolute -bottom-6 -right-6 glass p-5 rounded-2xl border border-cyber-blue/30">
-                    <p class="text-[10px] font-black uppercase text-cyber-blue tracking-widest mb-1">Localização</p>
-                    <p class="font-black text-sm">Muriaé – MG, Brasil</p>
-                    <p class="text-xs text-gray-500">Disponível Remotamente</p>
+                <h2 class="text-4xl sm:text-5xl md:text-6xl font-display font-black tracking-tight leading-tight text-white">
+                    Da Brisa de Niterói ao <br class="hidden sm:block">
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyber-blue via-cyber-cyan to-cyber-neon">Coração da Zona da Mata Mineira</span>
+                </h2>
+                <p class="text-lg text-gray-400 font-light leading-relaxed">
+                    A jornada de quem aprendeu nas ruas a ouvir as pessoas, nas escolas públicas a amar o conhecimento, e na tecnologia a construir um futuro com propósito.
+                </p>
+            </div>
+
+            <!-- Main Content: Split Grid -->
+            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center mb-20">
+                <!-- Left Column: Portrait Card -->
+                <div class="lg:col-span-5 relative group">
+                    <div class="spotlight-card relative z-10 w-full max-w-[420px] aspect-[4/5] mx-auto rounded-[36px] p-3 glass border border-white/15 shadow-[0_25px_60px_-15px_rgba(0,123,255,0.3)] transition-all duration-700 hover:border-cyber-blue/50">
+                        <div class="relative w-full h-full rounded-[28px] overflow-hidden bg-[#0A0D14] shadow-inner">
+                            <img src="evandro_historia.webp" alt="Evandro Silva Gallina - Trajetória e História" class="w-full h-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-105">
+                            <div class="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#0A0D14] via-[#0A0D14]/60 to-transparent pointer-events-none"></div>
+                            <div class="absolute inset-0 rounded-[28px] ring-1 ring-inset ring-white/10 pointer-events-none"></div>
+                        </div>
+                    </div>
+
+                    <!-- Floating Badge: Origem -->
+                    <div class="absolute -top-5 -left-3 sm:-left-6 z-20 glass px-4 py-3 rounded-2xl border border-white/10 shadow-2xl flex items-center gap-3">
+                        <div class="p-2 bg-cyber-blue/20 rounded-xl text-cyber-blue">
+                            <i data-lucide="map-pin" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <p class="text-[9px] uppercase font-black text-cyber-blue tracking-widest leading-none">Origem & Chegada</p>
+                            <p class="text-xs font-black text-white tracking-tight mt-0.5">Niterói/RJ ➔ Muriaé/MG</p>
+                        </div>
+                    </div>
+
+                    <!-- Floating Badge: Raízes -->
+                    <div class="absolute -bottom-5 -right-3 sm:-right-6 z-20 glass px-4 py-3 rounded-2xl border border-white/10 shadow-2xl flex items-center gap-3">
+                        <div class="p-2 bg-cyber-neon/20 rounded-xl text-cyber-neon">
+                            <i data-lucide="heart" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <p class="text-[9px] uppercase font-black text-cyber-neon tracking-widest leading-none">Coração Comunitário</p>
+                            <p class="text-xs font-black text-white tracking-tight mt-0.5">Barra & Bairro União</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Narrative Chapters -->
+                <div class="lg:col-span-7 space-y-8">
+                    <!-- Chapter 1 -->
+                    <div class="glass p-6 sm:p-7 rounded-3xl border border-white/10 hover:border-cyber-blue/30 transition-all">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="w-8 h-8 rounded-xl bg-cyber-blue/15 text-cyber-blue font-mono font-black text-xs flex items-center justify-center border border-cyber-blue/30">01</span>
+                            <h3 class="text-xl font-bold uppercase tracking-tight text-white">A Travessia e a Força Materna</h3>
+                        </div>
+                        <p class="text-gray-300 font-light text-sm sm:text-base leading-relaxed">
+                            Nascido em 4 de março de 1991 no Hospital Antônio Pedro, em Niterói - RJ, filho de Dona Eva Maria da Silva — uma mulher mineira de fibra inabalável —, a vida traçou seu rumo definitivo aos 5 anos de idade. Segurando a mão firme de sua mãe, Evandro atravessou a divisa para encontrar nas montanhas e no abraço acolhedor de <strong class="text-white font-semibold">Muriaé/MG</strong> o solo fértil onde suas raízes fincariam para sempre.
+                        </p>
+                    </div>
+
+                    <!-- Chapter 2 -->
+                    <div class="glass p-6 sm:p-7 rounded-3xl border border-white/10 hover:border-cyber-neon/30 transition-all">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="w-8 h-8 rounded-xl bg-cyber-neon/15 text-cyber-neon font-mono font-black text-xs flex items-center justify-center border border-cyber-neon/30">02</span>
+                            <h3 class="text-xl font-bold uppercase tracking-tight text-white">O Chão da Barra, Bairro União e a Escola Pública</h3>
+                        </div>
+                        <p class="text-gray-300 font-light text-sm sm:text-base leading-relaxed">
+                            Crescer entre as ruas vibrantes do <strong class="text-white font-semibold">Bairro da Barra</strong> e o calor comunitário do <strong class="text-white font-semibold">Bairro União</strong> moldou um olhar sensível e solidário para a realidade das pessoas. Foi nos bancos da <strong class="text-white font-semibold">Escola Estadual Desembargador Canedo</strong> e, mais tarde, na histórica <strong class="text-white font-semibold">Escola Estadual Dr. Olavo Tostes</strong> que o jovem curioso descobriu o fascínio pelas ideias, pela comunicação e pelo poder transformador do estudo.
+                        </p>
+                    </div>
+
+                    <!-- Chapter 3 -->
+                    <div class="glass p-6 sm:p-7 rounded-3xl border border-white/10 hover:border-purple-400/30 transition-all">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="w-8 h-8 rounded-xl bg-purple-400/15 text-purple-400 font-mono font-black text-xs flex items-center justify-center border border-purple-400/30">03</span>
+                            <h3 class="text-xl font-bold uppercase tracking-tight text-white">A Escola da Vida: Da Comunicação Humana à Gestão Pública</h3>
+                        </div>
+                        <p class="text-gray-300 font-light text-sm sm:text-base leading-relaxed">
+                            Antes da automação, houve o olho no olho. Entre 2012 e 2018, na linha de frente do atendimento ao cliente e vendas nas gigantes de telecomunicações (Claro, TIM e Vivo Empresas), Evandro desenvolveu uma escuta ativa ímpar. Formou-se em <strong class="text-white font-semibold">Gestão Pública (UNOPAR)</strong> e diplomou-se roteirista sob mentoria do mestre <strong class="text-white font-semibold">Jorge Furtado</strong>. Dedicou anos de vida pública à juventude, cultura e comunicação na FUNDARTE, na Prefeitura de Muriaé e no DEMSUR, dando voz a quem mais precisava.
+                        </p>
+                    </div>
+
+                    <!-- Chapter 4 -->
+                    <div class="glass p-6 sm:p-7 rounded-3xl border border-cyber-blue/30 bg-gradient-to-r from-cyber-blue/5 via-transparent to-cyber-neon/5">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="w-8 h-8 rounded-xl bg-cyber-blue text-white font-mono font-black text-xs flex items-center justify-center shadow-[0_0_15px_rgba(0,123,255,0.4)]">04</span>
+                            <h3 class="text-xl font-bold uppercase tracking-tight text-white">O Encontro da Alma Humana com a Inteligência Artificial</h3>
+                        </div>
+                        <p class="text-gray-300 font-light text-sm sm:text-base leading-relaxed">
+                            Hoje, aos 35 anos, Evandro fundou a <strong class="text-white font-semibold">ESG Tecnologia</strong>. Sua história prova que sistemas inteligentes e automações avançadas (n8n, Multi-Agentes, RAG) só têm valor verdadeiro quando servem para libertar o tempo humano, multiplicar negócios e gerar impacto social real e sustentável.
+                        </p>
+                    </div>
                 </div>
             </div>
-            <div class="space-y-8">
-                <div>
-                    <p class="text-cyber-blue text-sm font-black uppercase tracking-[0.3em] mb-4">Sobre Mim</p>
-                    <h2 class="text-5xl md:text-6xl mb-6">A Ponte entre <span class="text-gray-500">Pessoas e IA</span></h2>
-                    <p class="text-gray-400 leading-relaxed text-lg mb-4">Sou Evandro Silva Gallina, um profissional multidisciplinar com um background único: a rara interseção entre <strong>Comunicação Institucional, Gestão Pública e Engenharia de IA</strong>.</p>
-                    <p class="text-gray-400 leading-relaxed mb-4">Ao contrário de desenvolvedores tradicionais, minha origem na Gestão de Juventude e Comunicação me treinou para entender de pessoas, narrativas e engajamento. E ao contrário de comunicadores tradicionais, eu possuo o conhecimento técnico avançado para construir infraestruturas de IA, CRMs, SaaS e Agentes Autônomos de Atendimento.</p>
-                    <p class="text-gray-400 leading-relaxed">Eu não entrego apenas código ou apenas vídeos. Eu entrego <strong>soluções completas</strong>. Desde a roteirização criativa para engajar o público no audiovisual até a arquitetura de automações de atendimento (RAG) que escalam a sua operação. Ter meu perfil em uma equipe é garantir que a tecnologia será sempre usada para potencializar a experiência humana com resultados reais.</p>
+
+            <!-- Milestone Badges Bar -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="glass p-5 rounded-2xl border border-white/5 text-center">
+                    <p class="text-xs uppercase font-mono tracking-widest text-cyber-blue font-black mb-1">Nascimento</p>
+                    <p class="text-white font-bold text-sm">Niterói – RJ (1991)</p>
+                    <p class="text-[11px] text-gray-500 mt-1">Hospital Antônio Pedro</p>
                 </div>
-                <div class="grid grid-cols-2 gap-4">
-                    <div class="glass p-5 rounded-2xl border border-white/5">
-                        <i data-lucide="graduation-cap" class="w-5 h-5 text-cyber-blue mb-3"></i>
-                        <p class="font-black text-sm">Gestão Pública</p>
-                        <p class="text-xs text-gray-500">Faculdade UNOPAR</p>
-                    </div>
-                    <div class="glass p-5 rounded-2xl border border-white/5">
-                        <i data-lucide="award" class="w-5 h-5 text-cyber-neon mb-3"></i>
-                        <p class="font-black text-sm">Gestão de Projetos</p>
-                        <p class="text-xs text-gray-500">Experiência Municipal</p>
-                    </div>
-                    <div class="glass p-5 rounded-2xl border border-white/5">
-                        <i data-lucide="code-2" class="w-5 h-5 text-cyber-blue mb-3"></i>
-                        <p class="font-black text-sm">IA & Automação</p>
-                        <p class="text-xs text-gray-500">n8n, Python, OpenAI</p>
-                    </div>
-                    <div class="glass p-5 rounded-2xl border border-white/5">
-                        <i data-lucide="camera" class="w-5 h-5 text-purple-400 mb-3"></i>
-                        <p class="font-black text-sm">Audiovisual & Design</p>
-                        <p class="text-xs text-gray-500">Fotografia + Branding</p>
-                    </div>
+                <div class="glass p-5 rounded-2xl border border-white/5 text-center">
+                    <p class="text-xs uppercase font-mono tracking-widest text-cyber-neon font-black mb-1">Coração</p>
+                    <p class="text-white font-bold text-sm">Muriaé – MG</p>
+                    <p class="text-[11px] text-gray-500 mt-1">Barra & Bairro União</p>
+                </div>
+                <div class="glass p-5 rounded-2xl border border-white/5 text-center">
+                    <p class="text-xs uppercase font-mono tracking-widest text-purple-400 font-black mb-1">Formação Escolar</p>
+                    <p class="text-white font-bold text-sm">Canedo & Olavo Tostes</p>
+                    <p class="text-[11px] text-gray-500 mt-1">Escola Pública Mineira</p>
+                </div>
+                <div class="glass p-5 rounded-2xl border border-white/5 text-center">
+                    <p class="text-xs uppercase font-mono tracking-widest text-orange-400 font-black mb-1">Graduação</p>
+                    <p class="text-white font-bold text-sm">Gestão Pública</p>
+                    <p class="text-[11px] text-gray-500 mt-1">Universidade UNOPAR</p>
                 </div>
             </div>
         </div>
     </section>
+
 
     <!-- Bento Grid Stack -->
     <section id="stack" class="py-24 px-6 max-w-7xl mx-auto">
@@ -623,24 +691,9 @@
         </div>
 
         <div class="flex flex-col lg:flex-row gap-8">
-            <!-- Interactivity Card: Evandro 3D Skills Presenter -->
-            <div class="lg:w-1/3 flex flex-col justify-between bg-gradient-to-b from-[#0E1017] to-[#0A0B10] rounded-3xl p-4 sm:p-5 border border-white/10 shadow-2xl relative overflow-hidden group">
-                <div class="relative w-full aspect-[9/14] sm:aspect-[9/13] rounded-2xl overflow-hidden bg-[#07080C] border border-white/5">
-                    <video autoplay loop muted playsinline poster="videos/skills-loop-poster.jpg" class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105">
-                        <source src="videos/skills-loop.mp4" type="video/mp4">
-                    </video>
-                    <!-- Bottom Gradient Overlay to melt seamlessly -->
-                    <div class="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#0E1017] via-[#0E1017]/60 to-transparent pointer-events-none"></div>
-                    <!-- Live Floating Badge -->
-                    <div class="absolute top-3 left-3 glass px-3 py-1 rounded-full text-[10px] font-black text-cyber-blue border border-cyber-blue/30 uppercase tracking-widest flex items-center gap-1.5">
-                        <span class="w-1.5 h-1.5 rounded-full bg-cyber-blue animate-pulse"></span>
-                        Apresentador IA 3D
-                    </div>
-                </div>
-                <div class="pt-4 text-center">
-                    <p class="text-xs uppercase font-mono tracking-widest text-cyber-neon font-black">Evandro Silva Gallina</p>
-                    <p class="text-sm text-gray-300 font-semibold mt-1">Conectando Automação n8n, Agentes IA e Estratégia</p>
-                </div>
+            <!-- Instagram Video Embed (Preenchendo o Vão) -->
+            <div class="lg:w-1/3 flex justify-center items-center bg-[#0D0D0D] rounded-3xl p-4 border border-white/5">
+                <iframe src="https://www.instagram.com/p/DRX-SjICFOZ/embed" width="100%" height="480" frameborder="0" scrolling="no" allowtransparency="true" class="rounded-2xl max-w-[400px]"></iframe>
             </div>
 
             <!-- Bento Grid Items -->
@@ -1347,46 +1400,6 @@
             <h2 class="text-5xl md:text-6xl font-display font-black">Produtos <span class="text-gray-500">em Produção</span></h2>
         </div>
 
-        <!-- Showcase Header: Evandro at Workstation Building SaaS -->
-        <div class="mb-12 spotlight-card p-6 sm:p-8 rounded-[36px] bg-gradient-to-r from-[#0C0E17] via-[#0E101C] to-[#0A0B12] border border-white/10 shadow-2xl max-w-5xl mx-auto">
-            <div class="grid md:grid-cols-12 gap-8 items-center">
-                <div class="md:col-span-5 relative">
-                    <div class="relative w-full aspect-[9/13] sm:aspect-[4/5] rounded-[28px] overflow-hidden bg-[#07080C] border border-white/10 shadow-2xl">
-                        <video autoplay loop muted playsinline poster="videos/cases-loop-poster.jpg" class="w-full h-full object-cover object-top">
-                            <source src="videos/cases-loop.mp4" type="video/mp4">
-                        </video>
-                        <div class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#0C0E17] via-[#0C0E17]/50 to-transparent pointer-events-none"></div>
-                        <div class="absolute top-3 left-3 glass px-3 py-1 rounded-full text-[10px] font-black text-cyber-neon border border-cyber-neon/30 uppercase tracking-widest flex items-center gap-1.5">
-                            <span class="w-1.5 h-1.5 rounded-full bg-cyber-neon animate-pulse"></span>
-                            Workstation • Build Ativo
-                        </div>
-                    </div>
-                </div>
-                <div class="md:col-span-7 space-y-5">
-                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyber-blue/10 border border-cyber-blue/20 text-cyber-blue text-[10px] font-black uppercase tracking-widest">
-                        Arquitetura & Engenharia Full-Stack
-                    </div>
-                    <h3 class="text-3xl sm:text-4xl font-display font-black text-white leading-tight">
-                        Do Código à Produção: <br>
-                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyber-blue via-cyber-cyan to-cyber-neon">Soluções Soberanas que Operam 24/7</span>
-                    </h3>
-                    <p class="text-gray-300 font-light text-base leading-relaxed">
-                        Cada produto abaixo opera com infraestrutura de ponta: banco relacional dedicado Supabase, automações assíncronas com n8n e agentes cognitivos com resposta imediata.
-                    </p>
-                    <div class="grid grid-cols-2 gap-4 pt-2">
-                        <div class="glass p-4 rounded-2xl border border-white/5">
-                            <p class="text-2xl font-black text-cyber-neon">Zero</p>
-                            <p class="text-xs uppercase font-mono tracking-wider text-gray-400 mt-1">Vendor Lock-in</p>
-                        </div>
-                        <div class="glass p-4 rounded-2xl border border-white/5">
-                            <p class="text-2xl font-black text-cyber-blue">&lt; 15s</p>
-                            <p class="text-xs uppercase font-mono tracking-wider text-gray-400 mt-1">Tempo de Resposta</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
         <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             <!-- Product 1: IABOX (Featured Masterpiece for Social Media) -->
             <div class="group project-card spotlight-card p-4 rounded-3xl bg-[#0E0F16] border border-white/10 flex flex-col justify-between">
@@ -1702,23 +1715,6 @@
                 Pronto para <span class="text-cyber-blue">automatizar</span> sua visão? <br>
                 <span class="text-gray-500">Vamos construir algo extraordinário.</span>
             </h2>
-
-            <!-- Interactive 3D Greeting Avatar (Contact) -->
-            <div class="flex justify-center my-8">
-                <div class="relative group w-48 sm:w-56 aspect-[3/4] rounded-[32px] p-2 glass border border-white/20 shadow-[0_0_50px_rgba(0,255,153,0.2)] hover:border-cyber-neon/50 transition-all duration-700">
-                    <div class="relative w-full h-full rounded-[26px] overflow-hidden bg-[#0A0D14]">
-                        <video autoplay loop muted playsinline poster="videos/contact-loop-poster.jpg" class="w-full h-full object-cover object-top">
-                            <source src="videos/contact-loop.mp4" type="video/mp4">
-                        </video>
-                        <div class="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#0A0D14] to-transparent pointer-events-none"></div>
-                        <div class="absolute bottom-3 inset-x-0 text-center">
-                            <span class="text-[10px] uppercase font-mono font-black tracking-widest text-cyber-neon glass px-3 py-1 rounded-full border border-cyber-neon/30">
-                                Vamos conversar?
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <div class="flex flex-wrap justify-center items-center gap-4 pt-8">
                 <a href="https://www.linkedin.com/in/evandro-sillva-gallina-83097b1aa" target="_blank" class="flex items-center gap-3 px-5 py-3 sm:px-6 sm:py-4 rounded-2xl bg-[#0A66C2]/20 border border-[#0A66C2]/40 hover:bg-[#0A66C2]/40 transition-all group">
                     <i data-lucide="linkedin" class="w-5 h-5 sm:w-6 sm:h-6 text-[#0A66C2]"></i>
@@ -1764,23 +1760,6 @@
     </div>
 
         <script>
-        // Media Switcher for Hero
-        function toggleHeroMedia() {
-            const vid = document.getElementById('hero-video-el');
-            const img = document.getElementById('hero-img-el');
-            const label = document.getElementById('hero-toggle-label');
-            if (!vid || !img) return;
-            if (vid.classList.contains('hidden')) {
-                vid.classList.remove('hidden');
-                img.classList.add('hidden');
-                if (label) label.innerText = 'Modo Ativo: Vídeo IA 3D • Clique p/ Foto Original';
-            } else {
-                vid.classList.add('hidden');
-                img.classList.remove('hidden');
-                if (label) label.innerText = 'Modo Ativo: Foto Clássica • Clique p/ Vídeo IA 3D';
-            }
-        }
-
         // ==========================================
         // 1. Initialize Lucide Icons
         // ==========================================
