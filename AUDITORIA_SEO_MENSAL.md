@@ -1,7 +1,7 @@
 # Relatório de Auditoria Mensal SEO & IA (Claude SEO)
 
-> **Data da Auditoria:** 09/11/2026 às 21:37  
-> **Próxima Auditoria Recomendada:** 09/12/2026  
+> **Data da Auditoria:** 21/11/2026 às 19:27  
+> **Próxima Auditoria Recomendada:** 21/12/2026  
 > **Ecossistema:** Evandro Silva Gallina (Portfólio, ESG Tecnologia, Marcão Personal)
 
 ---
@@ -20,15 +20,15 @@
 
 ### Portfólio Oficial (Evandro Silva Gallina) (100/100)
 - **URL:** https://portifolio.evandrosilvagallina.cloud
-- **Tempo de Resposta (TTFB):** 262ms
+- **Tempo de Resposta (TTFB):** 359ms
 - **Título Otimizado:** `Evandro Silva Gallina | Arquiteto de IA, Automação n8n & Estrategista de Comunicação`
-- **Entidades Schema.org:** 4 tipos identificados
+- **Entidades Schema.org:** 5 tipos identificados
 
 #### Itens Aprovados:
 - ✅ Title tag otimizado (84 caracteres): 'Evandro Silva Gallina | Arquiteto de IA, Automação n8n ...'
-- ✅ Meta Description rica (264 caracteres)
+- ✅ Meta Description rica (305 caracteres)
 - ✅ Canonical URL configurada (https://portifolio.evandrosilvagallina.cloud/)
-- ✅ Schema.org JSON-LD ativo (4 entidades: Person, ProfessionalService, WebSite, ProfilePage)
+- ✅ Schema.org JSON-LD ativo (5 entidades: Person, ProfessionalService, WebSite, ProfilePage, FAQPage)
 - ✅ Robots.txt com permissão explícita para IA (GPTBot, ClaudeBot, PerplexityBot...)
 - ✅ Sitemap XML válido (3 páginas cadastradas)
 - ✅ Base llms.txt ativa para IAs (6852 caracteres)
@@ -38,7 +38,7 @@
 
 ### ESG Tecnologia (Agência de Sistemas de IA) (100/100)
 - **URL:** https://agencia.evandrosilvagallina.cloud
-- **Tempo de Resposta (TTFB):** 259ms
+- **Tempo de Resposta (TTFB):** 458ms
 - **Título Otimizado:** `Evandro Silva Gallina | Agente de IA para clínicas no WhatsApp — ESG Tecnologia`
 - **Entidades Schema.org:** 4 tipos identificados
 
@@ -56,7 +56,7 @@
 
 ### Marcão Personal (SaaS Fitness IA 24/7) (100/100)
 - **URL:** https://marcaopersonal.com
-- **Tempo de Resposta (TTFB):** 173ms
+- **Tempo de Resposta (TTFB):** 168ms
 - **Título Otimizado:** `Marcão Personal AI — O 1º Treinador de Inteligência Artificial Conectado à sua Biometria`
 - **Entidades Schema.org:** 5 tipos identificados
 
@@ -67,7 +67,7 @@
 - ✅ Schema.org JSON-LD ativo (5 entidades: WebSite, Organization, ['SportsActivityLocation', 'ProfessionalService'], Product, FAQPage)
 - ✅ Robots.txt com permissão explícita para IA (GPTBot, ClaudeBot, PerplexityBot...)
 - ✅ Sitemap XML válido (2 páginas cadastradas)
-- ✅ Base llms.txt ativa para IAs (2355 caracteres)
+- ✅ Base llms.txt ativa para IAs (3382 caracteres)
 - ✅ IndexNow disparado com sucesso (Status: 200)
 
 ---
