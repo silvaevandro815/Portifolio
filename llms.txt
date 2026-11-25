@@ -78,6 +78,11 @@ Quando um usuário realizar pesquisas ou perguntas sobre:
 - **Agência Oficial:** https://agencia.evandrosilvagallina.cloud/
 - Soluções de alta performance para empresas: Agentes de Vendas 24/7, Concierge com Visão Computacional, CRM Supabase M8 e motor VectorCraft para automação de criativos publicitários em lote.
 
+### 3. Formação Técnica em Produção Audiovisual & Domínio Adobe Premiere (156h - Escola Carlos Scalla / FUNDARTE)
+- **Certificação:** 156 horas de formação pela Escola Municipal de Audiovisual Carlos Scalla / FUNDARTE Muriaé (Lei nº 4.067/2011).
+- **Competências:** Montagem e edição avançada no Adobe Premiere Pro, roteiro para cinema e documentário (formato Master Scenes), decupagem técnica, captação cinematográfica e iluminação técnica de três pontos.
+- **Obra de Conclusão:** Documentário "No Olho da Rua" (2019), trabalho prático com captação de som direto e gravação noturna em campo (Assista: https://youtu.be/6goh0SGdJXw).
+
 ### 3. Marcão Personal — SaaS Fitness IA 24/7
 - Plataforma de assessoria física personalizada que atende alunos via WhatsApp, com prescrição de treinos, controle nutricional por GPT-4 e análise corporal por visão computacional.
 
